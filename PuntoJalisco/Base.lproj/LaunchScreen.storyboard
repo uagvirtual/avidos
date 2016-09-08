@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_bienestar" translatesAutoresizingMaskIntoConstraints="NO" id="dNz-Vo-DWZ">
-                                <rect key="frame" x="120" y="50" width="361" height="107"/>
+                                <rect key="frame" x="120" y="55" width="361" height="107"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dNz-Vo-DWZ" secondAttribute="height" multiplier="300:89" id="J6L-Px-kWs"/>
                                 </constraints>
@@ -36,7 +36,7 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_coecytjal" translatesAutoresizingMaskIntoConstraints="NO" id="b01-53-F9x">
-                                <rect key="frame" x="240" y="427" width="120" height="143"/>
+                                <rect key="frame" x="240" y="422" width="120" height="143"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="b01-53-F9x" secondAttribute="height" multiplier="100:119" id="bf3-Hi-LIc"/>
                                 </constraints>
@@ -46,8 +46,8 @@
                         <constraints>
                             <constraint firstItem="wk5-Xh-UBG" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.6" id="1DD-Bx-HFx"/>
                             <constraint firstItem="dNz-Vo-DWZ" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.6" constant="1" id="76a-mX-F25"/>
-                            <constraint firstItem="dNz-Vo-DWZ" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="30" id="8ev-x3-Ohd"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="b01-53-F9x" secondAttribute="bottom" constant="30" id="AFT-RM-ChP"/>
+                            <constraint firstItem="dNz-Vo-DWZ" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="35" id="8ev-x3-Ohd"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="b01-53-F9x" secondAttribute="bottom" constant="35" id="AFT-RM-ChP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Sga-RT-v46" secondAttribute="trailing" constant="-20" id="Ha3-yb-1YA"/>
                             <constraint firstItem="wk5-Xh-UBG" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="L0l-JL-2aM"/>
                             <constraint firstItem="b01-53-F9x" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.2" id="Mzh-9l-fn8"/>
