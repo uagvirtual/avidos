@@ -7,10 +7,12 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "ic_mapa_2x_50x50.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "ic_mapa_3x_75x75.png",
       "scale" : "3x"
     }
   ],
