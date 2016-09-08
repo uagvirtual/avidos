@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,8 +19,45 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="Sga-RT-v46">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_bienestar" translatesAutoresizingMaskIntoConstraints="NO" id="dNz-Vo-DWZ">
+                                <rect key="frame" x="120" y="50" width="361" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dNz-Vo-DWZ" secondAttribute="height" multiplier="300:89" id="J6L-Px-kWs"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_secretaria" translatesAutoresizingMaskIntoConstraints="NO" id="wk5-Xh-UBG">
+                                <rect key="frame" x="120" y="239" width="360" height="122"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wk5-Xh-UBG" secondAttribute="height" multiplier="297:100" id="5zQ-Qp-iEf"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_coecytjal" translatesAutoresizingMaskIntoConstraints="NO" id="b01-53-F9x">
+                                <rect key="frame" x="240" y="427" width="120" height="143"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="b01-53-F9x" secondAttribute="height" multiplier="100:119" id="bf3-Hi-LIc"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wk5-Xh-UBG" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.6" id="1DD-Bx-HFx"/>
+                            <constraint firstItem="dNz-Vo-DWZ" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.6" constant="1" id="76a-mX-F25"/>
+                            <constraint firstItem="dNz-Vo-DWZ" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="30" id="8ev-x3-Ohd"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="b01-53-F9x" secondAttribute="bottom" constant="30" id="AFT-RM-ChP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Sga-RT-v46" secondAttribute="trailing" constant="-20" id="Ha3-yb-1YA"/>
+                            <constraint firstItem="wk5-Xh-UBG" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="L0l-JL-2aM"/>
+                            <constraint firstItem="b01-53-F9x" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.2" id="Mzh-9l-fn8"/>
+                            <constraint firstItem="wk5-Xh-UBG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OcO-cS-ek1"/>
+                            <constraint firstItem="dNz-Vo-DWZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SYF-Vz-dyF"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Sga-RT-v46" secondAttribute="bottom" id="XXJ-fX-Ndi"/>
+                            <constraint firstItem="Sga-RT-v46" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="af4-my-a97"/>
+                            <constraint firstItem="Sga-RT-v46" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="gHz-ha-1JN"/>
+                            <constraint firstItem="b01-53-F9x" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iiE-dZ-2Qm"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +65,10 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo_bienestar" width="478" height="142"/>
+        <image name="logo_coecytjal" width="472" height="563"/>
+        <image name="logo_secretaria" width="474" height="160"/>
+        <image name="splash" width="1024" height="768"/>
+    </resources>
 </document>
