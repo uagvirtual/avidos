@@ -1,1149 +1,612 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>0967327F8A468B3125EE50C4</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>15283F46D7C2801A2107EC75</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-PuntoJalisco/Pods-PuntoJalisco-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>71CC56F45CC57BAFFC2F0242</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AC439A909C32BE6F16C9B1F3</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A95A37D7D237724A6FE5615C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-PuntoJalisco.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-PuntoJalisco/Pods-PuntoJalisco.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AC439A909C32BE6F16C9B1F3</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_PuntoJalisco.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>C1740867A5CB059958218164</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AC439A909C32BE6F16C9B1F3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C290737EA15FEDC3D277D85F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DB596C195AEDFBD27A71DE43</string>
-				<string>A95A37D7D237724A6FE5615C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DB596C195AEDFBD27A71DE43</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-PuntoJalisco.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-PuntoJalisco/Pods-PuntoJalisco.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC14AD391D7FDD6F0027FBA8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DC14AD441D7FDD6F0027FBA8</string>
-				<string>DC14AD5B1D7FDD6F0027FBA8</string>
-				<string>DC14AD661D7FDD6F0027FBA8</string>
-				<string>DC14AD431D7FDD6F0027FBA8</string>
-				<string>C290737EA15FEDC3D277D85F</string>
-				<string>71CC56F45CC57BAFFC2F0242</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC14AD3A1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0730</string>
-				<key>LastUpgradeCheck</key>
-				<string>0730</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Felix</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>DC14AD411D7FDD6F0027FBA8</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-						<key>DevelopmentTeam</key>
-						<string>NNWZVWTFJB</string>
-					</dict>
-					<key>DC14AD571D7FDD6F0027FBA8</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-						<key>TestTargetID</key>
-						<string>DC14AD411D7FDD6F0027FBA8</string>
-					</dict>
-					<key>DC14AD621D7FDD6F0027FBA8</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-						<key>TestTargetID</key>
-						<string>DC14AD411D7FDD6F0027FBA8</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>DC14AD3D1D7FDD6F0027FBA8</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>DC14AD391D7FDD6F0027FBA8</string>
-			<key>productRefGroup</key>
-			<string>DC14AD431D7FDD6F0027FBA8</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>DC14AD411D7FDD6F0027FBA8</string>
-				<string>DC14AD571D7FDD6F0027FBA8</string>
-				<string>DC14AD621D7FDD6F0027FBA8</string>
-			</array>
-		</dict>
-		<key>DC14AD3D1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>DC14AD6A1D7FDD6F0027FBA8</string>
-				<string>DC14AD6B1D7FDD6F0027FBA8</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>DC14AD3E1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>DC14AD4A1D7FDD6F0027FBA8</string>
-				<string>DC14AD461D7FDD6F0027FBA8</string>
-				<string>DC14AD481D7FDD6F0027FBA8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DC14AD3F1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>C1740867A5CB059958218164</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DC14AD401D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>DC14AD521D7FDD6F0027FBA8</string>
-				<string>DC14AD4F1D7FDD6F0027FBA8</string>
-				<string>DC14AD4D1D7FDD6F0027FBA8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DC14AD411D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>DC14AD6C1D7FDD6F0027FBA8</string>
-			<key>buildPhases</key>
-			<array>
-				<string>0967327F8A468B3125EE50C4</string>
-				<string>DC14AD3E1D7FDD6F0027FBA8</string>
-				<string>DC14AD3F1D7FDD6F0027FBA8</string>
-				<string>DC14AD401D7FDD6F0027FBA8</string>
-				<string>15283F46D7C2801A2107EC75</string>
-				<string>E242E8398581E2FD307B7208</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>PuntoJalisco</string>
-			<key>productName</key>
-			<string>PuntoJalisco</string>
-			<key>productReference</key>
-			<string>DC14AD421D7FDD6F0027FBA8</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>DC14AD421D7FDD6F0027FBA8</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>PuntoJalisco.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>DC14AD431D7FDD6F0027FBA8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DC14AD421D7FDD6F0027FBA8</string>
-				<string>DC14AD581D7FDD6F0027FBA8</string>
-				<string>DC14AD631D7FDD6F0027FBA8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC14AD441D7FDD6F0027FBA8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DC14AD451D7FDD6F0027FBA8</string>
-				<string>DC14AD471D7FDD6F0027FBA8</string>
-				<string>DC14AD491D7FDD6F0027FBA8</string>
-				<string>DC14AD4B1D7FDD6F0027FBA8</string>
-				<string>DC14AD4E1D7FDD6F0027FBA8</string>
-				<string>DC14AD501D7FDD6F0027FBA8</string>
-				<string>DC14AD531D7FDD6F0027FBA8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>PuntoJalisco</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC14AD451D7FDD6F0027FBA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AppDelegate.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC14AD461D7FDD6F0027FBA8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DC14AD451D7FDD6F0027FBA8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DC14AD471D7FDD6F0027FBA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>FirstViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC14AD481D7FDD6F0027FBA8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DC14AD471D7FDD6F0027FBA8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DC14AD491D7FDD6F0027FBA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>SecondViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC14AD4A1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DC14AD491D7FDD6F0027FBA8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DC14AD4B1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DC14AD4C1D7FDD6F0027FBA8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC14AD4C1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC14AD4D1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DC14AD4B1D7FDD6F0027FBA8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DC14AD4E1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC14AD4F1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DC14AD4E1D7FDD6F0027FBA8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DC14AD501D7FDD6F0027FBA8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DC14AD511D7FDD6F0027FBA8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC14AD511D7FDD6F0027FBA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC14AD521D7FDD6F0027FBA8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DC14AD501D7FDD6F0027FBA8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DC14AD531D7FDD6F0027FBA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC14AD541D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>DC14AD5D1D7FDD6F0027FBA8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DC14AD551D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DC14AD561D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DC14AD571D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>DC14AD6F1D7FDD6F0027FBA8</string>
-			<key>buildPhases</key>
-			<array>
-				<string>DC14AD541D7FDD6F0027FBA8</string>
-				<string>DC14AD551D7FDD6F0027FBA8</string>
-				<string>DC14AD561D7FDD6F0027FBA8</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>DC14AD5A1D7FDD6F0027FBA8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>PuntoJaliscoTests</string>
-			<key>productName</key>
-			<string>PuntoJaliscoTests</string>
-			<key>productReference</key>
-			<string>DC14AD581D7FDD6F0027FBA8</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>DC14AD581D7FDD6F0027FBA8</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>PuntoJaliscoTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>DC14AD591D7FDD6F0027FBA8</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>DC14AD3A1D7FDD6F0027FBA8</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>DC14AD411D7FDD6F0027FBA8</string>
-			<key>remoteInfo</key>
-			<string>PuntoJalisco</string>
-		</dict>
-		<key>DC14AD5A1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>DC14AD411D7FDD6F0027FBA8</string>
-			<key>targetProxy</key>
-			<string>DC14AD591D7FDD6F0027FBA8</string>
-		</dict>
-		<key>DC14AD5B1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DC14AD5C1D7FDD6F0027FBA8</string>
-				<string>DC14AD5E1D7FDD6F0027FBA8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>PuntoJaliscoTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC14AD5C1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>PuntoJaliscoTests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC14AD5D1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DC14AD5C1D7FDD6F0027FBA8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DC14AD5E1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC14AD5F1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>DC14AD681D7FDD6F0027FBA8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DC14AD601D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DC14AD611D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DC14AD621D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>DC14AD721D7FDD6F0027FBA8</string>
-			<key>buildPhases</key>
-			<array>
-				<string>DC14AD5F1D7FDD6F0027FBA8</string>
-				<string>DC14AD601D7FDD6F0027FBA8</string>
-				<string>DC14AD611D7FDD6F0027FBA8</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>DC14AD651D7FDD6F0027FBA8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>PuntoJaliscoUITests</string>
-			<key>productName</key>
-			<string>PuntoJaliscoUITests</string>
-			<key>productReference</key>
-			<string>DC14AD631D7FDD6F0027FBA8</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.ui-testing</string>
-		</dict>
-		<key>DC14AD631D7FDD6F0027FBA8</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>PuntoJaliscoUITests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>DC14AD641D7FDD6F0027FBA8</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>DC14AD3A1D7FDD6F0027FBA8</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>DC14AD411D7FDD6F0027FBA8</string>
-			<key>remoteInfo</key>
-			<string>PuntoJalisco</string>
-		</dict>
-		<key>DC14AD651D7FDD6F0027FBA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>DC14AD411D7FDD6F0027FBA8</string>
-			<key>targetProxy</key>
-			<string>DC14AD641D7FDD6F0027FBA8</string>
-		</dict>
-		<key>DC14AD661D7FDD6F0027FBA8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DC14AD671D7FDD6F0027FBA8</string>
-				<string>DC14AD691D7FDD6F0027FBA8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>PuntoJaliscoUITests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC14AD671D7FDD6F0027FBA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>PuntoJaliscoUITests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC14AD681D7FDD6F0027FBA8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DC14AD671D7FDD6F0027FBA8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DC14AD691D7FDD6F0027FBA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC14AD6A1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>DC14AD6B1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>DC14AD6C1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>DC14AD6D1D7FDD6F0027FBA8</string>
-				<string>DC14AD6E1D7FDD6F0027FBA8</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>DC14AD6D1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>DB596C195AEDFBD27A71DE43</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Developer</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PuntoJalisco/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>mx.avidos.PuntoJalisco</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>DC14AD6E1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>A95A37D7D237724A6FE5615C</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Developer</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PuntoJalisco/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>mx.avidos.PuntoJalisco</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>DC14AD6F1D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>DC14AD701D7FDD6F0027FBA8</string>
-				<string>DC14AD711D7FDD6F0027FBA8</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>DC14AD701D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PuntoJaliscoTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>mx.avidos.PuntoJaliscoTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/PuntoJalisco.app/PuntoJalisco</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>DC14AD711D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PuntoJaliscoTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>mx.avidos.PuntoJaliscoTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/PuntoJalisco.app/PuntoJalisco</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>DC14AD721D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>DC14AD731D7FDD6F0027FBA8</string>
-				<string>DC14AD741D7FDD6F0027FBA8</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>DC14AD731D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>PuntoJaliscoUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>mx.avidos.PuntoJaliscoUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>PuntoJalisco</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>DC14AD741D7FDD6F0027FBA8</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>PuntoJaliscoUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>mx.avidos.PuntoJaliscoUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>PuntoJalisco</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>E242E8398581E2FD307B7208</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-PuntoJalisco/Pods-PuntoJalisco-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>DC14AD3A1D7FDD6F0027FBA8</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C1740867A5CB059958218164 /* Pods_PuntoJalisco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC439A909C32BE6F16C9B1F3 /* Pods_PuntoJalisco.framework */; };
+		DC14AD461D7FDD6F0027FBA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC14AD451D7FDD6F0027FBA8 /* AppDelegate.swift */; };
+		DC14AD4D1D7FDD6F0027FBA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC14AD4B1D7FDD6F0027FBA8 /* Main.storyboard */; };
+		DC14AD4F1D7FDD6F0027FBA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC14AD4E1D7FDD6F0027FBA8 /* Assets.xcassets */; };
+		DC14AD521D7FDD6F0027FBA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC14AD501D7FDD6F0027FBA8 /* LaunchScreen.storyboard */; };
+		DC14AD5D1D7FDD6F0027FBA8 /* PuntoJaliscoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC14AD5C1D7FDD6F0027FBA8 /* PuntoJaliscoTests.swift */; };
+		DC14AD681D7FDD6F0027FBA8 /* PuntoJaliscoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC14AD671D7FDD6F0027FBA8 /* PuntoJaliscoUITests.swift */; };
+		DC4DD1391D81318F0094D9F3 /* PJRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DD1381D81318F0094D9F3 /* PJRegisterView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC14AD591D7FDD6F0027FBA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC14AD3A1D7FDD6F0027FBA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC14AD411D7FDD6F0027FBA8;
+			remoteInfo = PuntoJalisco;
+		};
+		DC14AD641D7FDD6F0027FBA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC14AD3A1D7FDD6F0027FBA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC14AD411D7FDD6F0027FBA8;
+			remoteInfo = PuntoJalisco;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A95A37D7D237724A6FE5615C /* Pods-PuntoJalisco.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoJalisco.release.xcconfig"; path = "Pods/Target Support Files/Pods-PuntoJalisco/Pods-PuntoJalisco.release.xcconfig"; sourceTree = "<group>"; };
+		AC439A909C32BE6F16C9B1F3 /* Pods_PuntoJalisco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PuntoJalisco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB596C195AEDFBD27A71DE43 /* Pods-PuntoJalisco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoJalisco.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PuntoJalisco/Pods-PuntoJalisco.debug.xcconfig"; sourceTree = "<group>"; };
+		DC14AD421D7FDD6F0027FBA8 /* PuntoJalisco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuntoJalisco.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC14AD451D7FDD6F0027FBA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DC14AD4C1D7FDD6F0027FBA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DC14AD4E1D7FDD6F0027FBA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC14AD511D7FDD6F0027FBA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DC14AD531D7FDD6F0027FBA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC14AD581D7FDD6F0027FBA8 /* PuntoJaliscoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PuntoJaliscoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC14AD5C1D7FDD6F0027FBA8 /* PuntoJaliscoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuntoJaliscoTests.swift; sourceTree = "<group>"; };
+		DC14AD5E1D7FDD6F0027FBA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC14AD631D7FDD6F0027FBA8 /* PuntoJaliscoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PuntoJaliscoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC14AD671D7FDD6F0027FBA8 /* PuntoJaliscoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuntoJaliscoUITests.swift; sourceTree = "<group>"; };
+		DC14AD691D7FDD6F0027FBA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC4DD1381D81318F0094D9F3 /* PJRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PJRegisterView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC14AD3F1D7FDD6F0027FBA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1740867A5CB059958218164 /* Pods_PuntoJalisco.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC14AD551D7FDD6F0027FBA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC14AD601D7FDD6F0027FBA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		71CC56F45CC57BAFFC2F0242 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC439A909C32BE6F16C9B1F3 /* Pods_PuntoJalisco.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C290737EA15FEDC3D277D85F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB596C195AEDFBD27A71DE43 /* Pods-PuntoJalisco.debug.xcconfig */,
+				A95A37D7D237724A6FE5615C /* Pods-PuntoJalisco.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DC14AD391D7FDD6F0027FBA8 = {
+			isa = PBXGroup;
+			children = (
+				DC14AD441D7FDD6F0027FBA8 /* PuntoJalisco */,
+				DC14AD5B1D7FDD6F0027FBA8 /* PuntoJaliscoTests */,
+				DC14AD661D7FDD6F0027FBA8 /* PuntoJaliscoUITests */,
+				DC14AD431D7FDD6F0027FBA8 /* Products */,
+				C290737EA15FEDC3D277D85F /* Pods */,
+				71CC56F45CC57BAFFC2F0242 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DC14AD431D7FDD6F0027FBA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC14AD421D7FDD6F0027FBA8 /* PuntoJalisco.app */,
+				DC14AD581D7FDD6F0027FBA8 /* PuntoJaliscoTests.xctest */,
+				DC14AD631D7FDD6F0027FBA8 /* PuntoJaliscoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC14AD441D7FDD6F0027FBA8 /* PuntoJalisco */ = {
+			isa = PBXGroup;
+			children = (
+				DC4DD13C1D8131B50094D9F3 /* AppDelegate */,
+				DC4DD13B1D8131A00094D9F3 /* Views */,
+				DC4DD13A1D8131940094D9F3 /* Controllers */,
+				DC14AD4E1D7FDD6F0027FBA8 /* Assets.xcassets */,
+				DC14AD531D7FDD6F0027FBA8 /* Info.plist */,
+			);
+			path = PuntoJalisco;
+			sourceTree = "<group>";
+		};
+		DC14AD5B1D7FDD6F0027FBA8 /* PuntoJaliscoTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC14AD5C1D7FDD6F0027FBA8 /* PuntoJaliscoTests.swift */,
+				DC14AD5E1D7FDD6F0027FBA8 /* Info.plist */,
+			);
+			path = PuntoJaliscoTests;
+			sourceTree = "<group>";
+		};
+		DC14AD661D7FDD6F0027FBA8 /* PuntoJaliscoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DC14AD671D7FDD6F0027FBA8 /* PuntoJaliscoUITests.swift */,
+				DC14AD691D7FDD6F0027FBA8 /* Info.plist */,
+			);
+			path = PuntoJaliscoUITests;
+			sourceTree = "<group>";
+		};
+		DC4DD13A1D8131940094D9F3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC4DD1381D81318F0094D9F3 /* PJRegisterView.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		DC4DD13B1D8131A00094D9F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DC14AD4B1D7FDD6F0027FBA8 /* Main.storyboard */,
+				DC14AD501D7FDD6F0027FBA8 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DC4DD13C1D8131B50094D9F3 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				DC14AD451D7FDD6F0027FBA8 /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC14AD411D7FDD6F0027FBA8 /* PuntoJalisco */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC14AD6C1D7FDD6F0027FBA8 /* Build configuration list for PBXNativeTarget "PuntoJalisco" */;
+			buildPhases = (
+				0967327F8A468B3125EE50C4 /* Check Pods Manifest.lock */,
+				DC14AD3E1D7FDD6F0027FBA8 /* Sources */,
+				DC14AD3F1D7FDD6F0027FBA8 /* Frameworks */,
+				DC14AD401D7FDD6F0027FBA8 /* Resources */,
+				15283F46D7C2801A2107EC75 /* Embed Pods Frameworks */,
+				E242E8398581E2FD307B7208 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PuntoJalisco;
+			productName = PuntoJalisco;
+			productReference = DC14AD421D7FDD6F0027FBA8 /* PuntoJalisco.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC14AD571D7FDD6F0027FBA8 /* PuntoJaliscoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC14AD6F1D7FDD6F0027FBA8 /* Build configuration list for PBXNativeTarget "PuntoJaliscoTests" */;
+			buildPhases = (
+				DC14AD541D7FDD6F0027FBA8 /* Sources */,
+				DC14AD551D7FDD6F0027FBA8 /* Frameworks */,
+				DC14AD561D7FDD6F0027FBA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC14AD5A1D7FDD6F0027FBA8 /* PBXTargetDependency */,
+			);
+			name = PuntoJaliscoTests;
+			productName = PuntoJaliscoTests;
+			productReference = DC14AD581D7FDD6F0027FBA8 /* PuntoJaliscoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DC14AD621D7FDD6F0027FBA8 /* PuntoJaliscoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC14AD721D7FDD6F0027FBA8 /* Build configuration list for PBXNativeTarget "PuntoJaliscoUITests" */;
+			buildPhases = (
+				DC14AD5F1D7FDD6F0027FBA8 /* Sources */,
+				DC14AD601D7FDD6F0027FBA8 /* Frameworks */,
+				DC14AD611D7FDD6F0027FBA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC14AD651D7FDD6F0027FBA8 /* PBXTargetDependency */,
+			);
+			name = PuntoJaliscoUITests;
+			productName = PuntoJaliscoUITests;
+			productReference = DC14AD631D7FDD6F0027FBA8 /* PuntoJaliscoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC14AD3A1D7FDD6F0027FBA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Felix;
+				TargetAttributes = {
+					DC14AD411D7FDD6F0027FBA8 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = NNWZVWTFJB;
+					};
+					DC14AD571D7FDD6F0027FBA8 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = DC14AD411D7FDD6F0027FBA8;
+					};
+					DC14AD621D7FDD6F0027FBA8 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = DC14AD411D7FDD6F0027FBA8;
+					};
+				};
+			};
+			buildConfigurationList = DC14AD3D1D7FDD6F0027FBA8 /* Build configuration list for PBXProject "PuntoJalisco" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DC14AD391D7FDD6F0027FBA8;
+			productRefGroup = DC14AD431D7FDD6F0027FBA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC14AD411D7FDD6F0027FBA8 /* PuntoJalisco */,
+				DC14AD571D7FDD6F0027FBA8 /* PuntoJaliscoTests */,
+				DC14AD621D7FDD6F0027FBA8 /* PuntoJaliscoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC14AD401D7FDD6F0027FBA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC14AD521D7FDD6F0027FBA8 /* LaunchScreen.storyboard in Resources */,
+				DC14AD4F1D7FDD6F0027FBA8 /* Assets.xcassets in Resources */,
+				DC14AD4D1D7FDD6F0027FBA8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC14AD561D7FDD6F0027FBA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC14AD611D7FDD6F0027FBA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0967327F8A468B3125EE50C4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		15283F46D7C2801A2107EC75 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PuntoJalisco/Pods-PuntoJalisco-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E242E8398581E2FD307B7208 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PuntoJalisco/Pods-PuntoJalisco-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC14AD3E1D7FDD6F0027FBA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC14AD461D7FDD6F0027FBA8 /* AppDelegate.swift in Sources */,
+				DC4DD1391D81318F0094D9F3 /* PJRegisterView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC14AD541D7FDD6F0027FBA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC14AD5D1D7FDD6F0027FBA8 /* PuntoJaliscoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC14AD5F1D7FDD6F0027FBA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC14AD681D7FDD6F0027FBA8 /* PuntoJaliscoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC14AD5A1D7FDD6F0027FBA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC14AD411D7FDD6F0027FBA8 /* PuntoJalisco */;
+			targetProxy = DC14AD591D7FDD6F0027FBA8 /* PBXContainerItemProxy */;
+		};
+		DC14AD651D7FDD6F0027FBA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC14AD411D7FDD6F0027FBA8 /* PuntoJalisco */;
+			targetProxy = DC14AD641D7FDD6F0027FBA8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DC14AD4B1D7FDD6F0027FBA8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC14AD4C1D7FDD6F0027FBA8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DC14AD501D7FDD6F0027FBA8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC14AD511D7FDD6F0027FBA8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC14AD6A1D7FDD6F0027FBA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DC14AD6B1D7FDD6F0027FBA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC14AD6D1D7FDD6F0027FBA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB596C195AEDFBD27A71DE43 /* Pods-PuntoJalisco.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = PuntoJalisco/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mx.avidos.PuntoJalisco;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DC14AD6E1D7FDD6F0027FBA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A95A37D7D237724A6FE5615C /* Pods-PuntoJalisco.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = PuntoJalisco/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mx.avidos.PuntoJalisco;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DC14AD701D7FDD6F0027FBA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PuntoJaliscoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mx.avidos.PuntoJaliscoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PuntoJalisco.app/PuntoJalisco";
+			};
+			name = Debug;
+		};
+		DC14AD711D7FDD6F0027FBA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PuntoJaliscoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mx.avidos.PuntoJaliscoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PuntoJalisco.app/PuntoJalisco";
+			};
+			name = Release;
+		};
+		DC14AD731D7FDD6F0027FBA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PuntoJaliscoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mx.avidos.PuntoJaliscoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PuntoJalisco;
+			};
+			name = Debug;
+		};
+		DC14AD741D7FDD6F0027FBA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PuntoJaliscoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mx.avidos.PuntoJaliscoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PuntoJalisco;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC14AD3D1D7FDD6F0027FBA8 /* Build configuration list for PBXProject "PuntoJalisco" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC14AD6A1D7FDD6F0027FBA8 /* Debug */,
+				DC14AD6B1D7FDD6F0027FBA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC14AD6C1D7FDD6F0027FBA8 /* Build configuration list for PBXNativeTarget "PuntoJalisco" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC14AD6D1D7FDD6F0027FBA8 /* Debug */,
+				DC14AD6E1D7FDD6F0027FBA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC14AD6F1D7FDD6F0027FBA8 /* Build configuration list for PBXNativeTarget "PuntoJaliscoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC14AD701D7FDD6F0027FBA8 /* Debug */,
+				DC14AD711D7FDD6F0027FBA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC14AD721D7FDD6F0027FBA8 /* Build configuration list for PBXNativeTarget "PuntoJaliscoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC14AD731D7FDD6F0027FBA8 /* Debug */,
+				DC14AD741D7FDD6F0027FBA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC14AD3A1D7FDD6F0027FBA8 /* Project object */;
+}

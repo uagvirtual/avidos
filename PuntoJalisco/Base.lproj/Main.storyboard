@@ -3,6 +3,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Mapa-->
@@ -42,8 +45,9 @@
         <!--Conf-->
         <scene sceneID="pV8-XT-JqJ">
             <objects>
-                <navigationController id="hn8-n8-8pe" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="hn8-n8-8pe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Conf" image="settings" id="VnO-pY-skC"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qte-T8-uPx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -56,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="732" y="972"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View-->
         <scene sceneID="fc6-SY-Wpb">
             <objects>
-                <viewController id="C3W-iM-Cvv" sceneMemberID="viewController">
+                <viewController id="C3W-iM-Cvv" customClass="PJRegisterView" customModule="PuntoJalisco" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OQA-dA-fIl"/>
                         <viewControllerLayoutGuide type="bottom" id="CWx-JB-UHd"/>
@@ -67,7 +71,41 @@
                     <view key="view" contentMode="scaleToFill" id="XgR-fL-UET">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="Z0f-v1-Nhe">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wni-U4-1Ua">
+                                <rect key="frame" x="-11" y="116" width="611" height="435"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_punto_jalisco" translatesAutoresizingMaskIntoConstraints="NO" id="9Tz-WR-UpZ">
+                                <rect key="frame" x="210" y="30" width="180" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9Tz-WR-UpZ" secondAttribute="height" multiplier="163:60" id="zoh-tS-iaK"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z0f-v1-Nhe" secondAttribute="trailing" constant="-20" id="23T-N1-aDU"/>
+                            <constraint firstItem="9Tz-WR-UpZ" firstAttribute="top" secondItem="XgR-fL-UET" secondAttribute="topMargin" constant="30" id="Hn9-JA-kJZ"/>
+                            <constraint firstItem="Wni-U4-1Ua" firstAttribute="top" secondItem="9Tz-WR-UpZ" secondAttribute="bottom" constant="20" id="IzB-eO-nT8"/>
+                            <constraint firstItem="9Tz-WR-UpZ" firstAttribute="centerX" secondItem="XgR-fL-UET" secondAttribute="centerX" id="KSE-ef-eLx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wni-U4-1Ua" secondAttribute="trailing" constant="-20" id="RPS-aB-jZO"/>
+                            <constraint firstItem="CWx-JB-UHd" firstAttribute="top" secondItem="Z0f-v1-Nhe" secondAttribute="bottom" id="TZy-Um-f7L"/>
+                            <constraint firstItem="Wni-U4-1Ua" firstAttribute="leading" secondItem="XgR-fL-UET" secondAttribute="leadingMargin" constant="-31" id="UDn-hJ-61Y"/>
+                            <constraint firstItem="Z0f-v1-Nhe" firstAttribute="leading" secondItem="XgR-fL-UET" secondAttribute="leadingMargin" constant="-20" id="ksr-WW-fmX"/>
+                            <constraint firstItem="9Tz-WR-UpZ" firstAttribute="width" secondItem="Z0f-v1-Nhe" secondAttribute="width" multiplier="0.3" id="pJQ-nD-cj0"/>
+                            <constraint firstItem="Wni-U4-1Ua" firstAttribute="top" secondItem="OQA-dA-fIl" secondAttribute="bottom" constant="75" id="rJs-YB-VXP"/>
+                            <constraint firstItem="Z0f-v1-Nhe" firstAttribute="top" secondItem="XgR-fL-UET" secondAttribute="topMargin" id="xe1-Ku-smJ"/>
+                            <constraint firstItem="CWx-JB-UHd" firstAttribute="top" secondItem="Wni-U4-1Ua" secondAttribute="bottom" id="ztr-D1-iKn"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="rJs-YB-VXP"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="NXR-vM-Dvd"/>
                 </viewController>
@@ -136,7 +174,9 @@
     </scenes>
     <resources>
         <image name="bus" width="25" height="25"/>
+        <image name="logo_punto_jalisco" width="472" height="175"/>
         <image name="map" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
+        <image name="splash" width="1024" height="768"/>
     </resources>
 </document>
