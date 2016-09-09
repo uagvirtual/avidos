@@ -219,6 +219,9 @@
                                                 <exclude reference="8Lw-5A-UU2"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="onSwitchValueChange:" destination="C3W-iM-Cvv" eventType="valueChanged" id="aUo-2k-FHN"/>
+                                        </connections>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWc-wv-odJ">
                                         <rect key="frame" x="50" y="298" width="55" height="18"/>
@@ -237,6 +240,9 @@
                                                 <color key="value" red="0.0" green="0.45882352941176469" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onSwitchValueChange:" destination="C3W-iM-Cvv" eventType="valueChanged" id="GZs-GJ-RL6"/>
+                                        </connections>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mujer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euh-Mh-qdM">
                                         <rect key="frame" x="453" y="298" width="39" height="18"/>
@@ -259,6 +265,9 @@
                                                 <exclude reference="PQ3-sA-NnM"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="registerButtonPressed:" destination="C3W-iM-Cvv" eventType="touchUpInside" id="6FJ-IC-9YI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -318,7 +327,11 @@
                     <navigationItem key="navigationItem" id="NXR-vM-Dvd"/>
                     <connections>
                         <outlet property="datePicker" destination="fOv-gp-zLs" id="eJC-9f-63r"/>
+                        <outlet property="emailTextField" destination="4Ad-zO-iPH" id="JsR-vm-ooq"/>
+                        <outlet property="femaleSwitch" destination="gly-ir-okZ" id="ZTR-Im-SW2"/>
                         <outlet property="fullNameTextField" destination="q1e-I0-nXL" id="fuW-ht-ahm"/>
+                        <outlet property="maleSwitch" destination="T0i-W4-r4P" id="fk2-DX-i3h"/>
+                        <outlet property="registerButton" destination="bcr-hd-Xbk" id="8AL-Rp-AZg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dZf-s4-MMn" userLabel="First Responder" sceneMemberID="firstResponder"/>

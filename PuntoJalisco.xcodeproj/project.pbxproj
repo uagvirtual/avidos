@@ -17,6 +17,8 @@
 		DC4DD1391D81318F0094D9F3 /* PJRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DD1381D81318F0094D9F3 /* PJRegisterView.swift */; };
 		DCBAF2391D82772C003D7BB7 /* AIFlatSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBAF2381D82772C003D7BB7 /* AIFlatSwitch.swift */; };
 		DCBAF23C1D82852C003D7BB7 /* PJRegisterContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBAF23B1D82852C003D7BB7 /* PJRegisterContainer.swift */; };
+		DCBAF23F1D82A7CB003D7BB7 /* PJNetworkCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBAF23E1D82A7CB003D7BB7 /* PJNetworkCalls.swift */; };
+		DCBAF2411D82AA08003D7BB7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBAF2401D82AA08003D7BB7 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		DC4DD1381D81318F0094D9F3 /* PJRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PJRegisterView.swift; sourceTree = "<group>"; };
 		DCBAF2381D82772C003D7BB7 /* AIFlatSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AIFlatSwitch.swift; path = AIFlatSwitch/AIFlatSwitch.swift; sourceTree = "<group>"; };
 		DCBAF23B1D82852C003D7BB7 /* PJRegisterContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PJRegisterContainer.swift; sourceTree = "<group>"; };
+		DCBAF23E1D82A7CB003D7BB7 /* PJNetworkCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PJNetworkCalls.swift; sourceTree = "<group>"; };
+		DCBAF2401D82AA08003D7BB7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 		DC14AD441D7FDD6F0027FBA8 /* PuntoJalisco */ = {
 			isa = PBXGroup;
 			children = (
+				DCBAF23D1D82A79A003D7BB7 /* Network */,
 				DCBAF2361D827626003D7BB7 /* Utilities */,
 				DC4DD13C1D8131B50094D9F3 /* AppDelegate */,
 				DC4DD13B1D8131A00094D9F3 /* Views */,
@@ -183,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				DCBAF2371D82762E003D7BB7 /* Switch */,
+				DCBAF2401D82AA08003D7BB7 /* Constants.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -193,6 +199,14 @@
 				DCBAF2381D82772C003D7BB7 /* AIFlatSwitch.swift */,
 			);
 			name = Switch;
+			sourceTree = "<group>";
+		};
+		DCBAF23D1D82A79A003D7BB7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DCBAF23E1D82A7CB003D7BB7 /* PJNetworkCalls.swift */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,7 +395,9 @@
 				DCBAF2391D82772C003D7BB7 /* AIFlatSwitch.swift in Sources */,
 				DC14AD461D7FDD6F0027FBA8 /* AppDelegate.swift in Sources */,
 				DCBAF23C1D82852C003D7BB7 /* PJRegisterContainer.swift in Sources */,
+				DCBAF23F1D82A7CB003D7BB7 /* PJNetworkCalls.swift in Sources */,
 				DC4DD1391D81318F0094D9F3 /* PJRegisterView.swift in Sources */,
+				DCBAF2411D82AA08003D7BB7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

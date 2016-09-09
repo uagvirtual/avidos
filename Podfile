@@ -5,6 +5,7 @@
 
 target 'PuntoJalisco' do
   pod 'GoogleMaps'
+  pod 'Alamofire', '~> 3.5'
 end
 
 target 'PuntoJaliscoTests' do
