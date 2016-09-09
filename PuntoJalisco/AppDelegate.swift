@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        let nav = self.window?.rootViewController as! UINavigationController
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//        nav.pushViewController(storyBoard.instantiateViewControllerWithIdentifier("PJRegisterView") as! PJRegisterView, animated: false)
+        
+        let vc:PJRegisterView = storyBoard.instantiateViewControllerWithIdentifier("PJRegisterView") as! PJRegisterView
+//        UIApplication.sharedApplication().keyWindow?.rootViewController = vc
+        self.window?.rootViewController = vc
+        
         return true
     }
 

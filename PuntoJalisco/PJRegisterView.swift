@@ -10,6 +10,9 @@ import UIKit
 
 class PJRegisterView: UIViewController {
 
+    @IBOutlet weak var fullNameTextField: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
