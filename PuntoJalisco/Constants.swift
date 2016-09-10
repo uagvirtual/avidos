@@ -10,14 +10,17 @@ import UIKit
 
 class Constants: NSObject {
     struct Register {
-        static let emailArg = "EMAIL"
-        static let nameArg = "NOMBRECOMPLETO"
-        static let birthDateArg = "FECHA_NAC"
-        static let genderArg = "GENERO"
+        static let emailKey = "EMAIL"
+        static let nameKey = "NOMBRECOMPLETO"
+        static let birthDateKey = "FECHA_NAC"
+        static let genderKey = "GENERO"
     }
     
     struct Paths {
         static let mainPath = "http://192.99.41.203:99"
         static let registerPath = "/ws_REGISTRO_APP.ASPX"
     }
+    
+    static let tokenKey = "token"
+    static let isRegistred = "isRegistred"
 }

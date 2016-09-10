@@ -6,6 +6,7 @@
 target 'PuntoJalisco' do
   pod 'GoogleMaps'
   pod 'Alamofire', '~> 3.5'
+  pod 'IQKeyboardManagerSwift'
 end
 
 target 'PuntoJaliscoTests' do

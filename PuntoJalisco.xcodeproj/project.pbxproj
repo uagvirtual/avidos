@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C1740867A5CB059958218164 /* Pods_PuntoJalisco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC439A909C32BE6F16C9B1F3 /* Pods_PuntoJalisco.framework */; };
+		1F45E3E2F5B9ED06A1A347D4 /* Pods_PuntoJalisco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EAD86AEA8428EFF38B4C45 /* Pods_PuntoJalisco.framework */; };
+		72E4BCBA154A277126153F8A /* Pods_PuntoJaliscoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91ECF059AE68ED6A6AA06EC /* Pods_PuntoJaliscoTests.framework */; };
 		DC14AD461D7FDD6F0027FBA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC14AD451D7FDD6F0027FBA8 /* AppDelegate.swift */; };
 		DC14AD4D1D7FDD6F0027FBA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC14AD4B1D7FDD6F0027FBA8 /* Main.storyboard */; };
 		DC14AD4F1D7FDD6F0027FBA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC14AD4E1D7FDD6F0027FBA8 /* Assets.xcassets */; };
@@ -19,6 +20,8 @@
 		DCBAF23C1D82852C003D7BB7 /* PJRegisterContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBAF23B1D82852C003D7BB7 /* PJRegisterContainer.swift */; };
 		DCBAF23F1D82A7CB003D7BB7 /* PJNetworkCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBAF23E1D82A7CB003D7BB7 /* PJNetworkCalls.swift */; };
 		DCBAF2411D82AA08003D7BB7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBAF2401D82AA08003D7BB7 /* Constants.swift */; };
+		DCCEBA0D1D83906A0093024D /* PJMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCEBA0C1D83906A0093024D /* PJMapViewController.swift */; };
+		FD081DF91C55C1225E37A6CE /* Pods_PuntoJaliscoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE98B13980664EC28B42BF3 /* Pods_PuntoJaliscoUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A95A37D7D237724A6FE5615C /* Pods-PuntoJalisco.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoJalisco.release.xcconfig"; path = "Pods/Target Support Files/Pods-PuntoJalisco/Pods-PuntoJalisco.release.xcconfig"; sourceTree = "<group>"; };
-		AC439A909C32BE6F16C9B1F3 /* Pods_PuntoJalisco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PuntoJalisco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB596C195AEDFBD27A71DE43 /* Pods-PuntoJalisco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoJalisco.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PuntoJalisco/Pods-PuntoJalisco.debug.xcconfig"; sourceTree = "<group>"; };
+		14EAD86AEA8428EFF38B4C45 /* Pods_PuntoJalisco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PuntoJalisco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		478D3AB6C7695A0DE27ECAEB /* Pods-PuntoJaliscoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoJaliscoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PuntoJaliscoTests/Pods-PuntoJaliscoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4FB65ED49D68A377A5D64129 /* Pods-PuntoJalisco.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoJalisco.release.xcconfig"; path = "Pods/Target Support Files/Pods-PuntoJalisco/Pods-PuntoJalisco.release.xcconfig"; sourceTree = "<group>"; };
+		969F3A5E8FC53F94F9395584 /* Pods-PuntoJaliscoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoJaliscoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PuntoJaliscoTests/Pods-PuntoJaliscoTests.release.xcconfig"; sourceTree = "<group>"; };
+		B44794E708963111C8DF46FF /* Pods-PuntoJaliscoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoJaliscoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PuntoJaliscoUITests/Pods-PuntoJaliscoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CFE98B13980664EC28B42BF3 /* Pods_PuntoJaliscoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PuntoJaliscoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D006EDDA90AA3147CF308ED4 /* Pods-PuntoJaliscoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoJaliscoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PuntoJaliscoUITests/Pods-PuntoJaliscoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DC14AD421D7FDD6F0027FBA8 /* PuntoJalisco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuntoJalisco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC14AD451D7FDD6F0027FBA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC14AD4C1D7FDD6F0027FBA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +66,10 @@
 		DCBAF23B1D82852C003D7BB7 /* PJRegisterContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PJRegisterContainer.swift; sourceTree = "<group>"; };
 		DCBAF23E1D82A7CB003D7BB7 /* PJNetworkCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PJNetworkCalls.swift; sourceTree = "<group>"; };
 		DCBAF2401D82AA08003D7BB7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DCCEBA0C1D83906A0093024D /* PJMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PJMapViewController.swift; sourceTree = "<group>"; };
+		DCCEBA0E1D8391E90093024D /* PuntoJalisco-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PuntoJalisco-Bridging-Header.h"; path = "PuntoJalisco/PuntoJalisco-Bridging-Header.h"; sourceTree = "<group>"; };
+		DF0EDAA697D4EA0181C92684 /* Pods-PuntoJalisco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoJalisco.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PuntoJalisco/Pods-PuntoJalisco.debug.xcconfig"; sourceTree = "<group>"; };
+		E91ECF059AE68ED6A6AA06EC /* Pods_PuntoJaliscoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PuntoJaliscoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1740867A5CB059958218164 /* Pods_PuntoJalisco.framework in Frameworks */,
+				1F45E3E2F5B9ED06A1A347D4 /* Pods_PuntoJalisco.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72E4BCBA154A277126153F8A /* Pods_PuntoJaliscoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,38 +93,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD081DF91C55C1225E37A6CE /* Pods_PuntoJaliscoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		71CC56F45CC57BAFFC2F0242 /* Frameworks */ = {
+		4B29C0350512DE414EEA8A90 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AC439A909C32BE6F16C9B1F3 /* Pods_PuntoJalisco.framework */,
+				14EAD86AEA8428EFF38B4C45 /* Pods_PuntoJalisco.framework */,
+				E91ECF059AE68ED6A6AA06EC /* Pods_PuntoJaliscoTests.framework */,
+				CFE98B13980664EC28B42BF3 /* Pods_PuntoJaliscoUITests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C290737EA15FEDC3D277D85F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DB596C195AEDFBD27A71DE43 /* Pods-PuntoJalisco.debug.xcconfig */,
-				A95A37D7D237724A6FE5615C /* Pods-PuntoJalisco.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		DC14AD391D7FDD6F0027FBA8 = {
 			isa = PBXGroup;
 			children = (
+				DCCEBA0E1D8391E90093024D /* PuntoJalisco-Bridging-Header.h */,
 				DC14AD441D7FDD6F0027FBA8 /* PuntoJalisco */,
 				DC14AD5B1D7FDD6F0027FBA8 /* PuntoJaliscoTests */,
 				DC14AD661D7FDD6F0027FBA8 /* PuntoJaliscoUITests */,
 				DC14AD431D7FDD6F0027FBA8 /* Products */,
-				C290737EA15FEDC3D277D85F /* Pods */,
-				71CC56F45CC57BAFFC2F0242 /* Frameworks */,
+				FA3FBDDDB225ADEDC426A58A /* Pods */,
+				4B29C0350512DE414EEA8A90 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +170,7 @@
 			children = (
 				DC4DD1381D81318F0094D9F3 /* PJRegisterView.swift */,
 				DCBAF23B1D82852C003D7BB7 /* PJRegisterContainer.swift */,
+				DCCEBA0C1D83906A0093024D /* PJMapViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -209,6 +217,19 @@
 			name = Network;
 			sourceTree = "<group>";
 		};
+		FA3FBDDDB225ADEDC426A58A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF0EDAA697D4EA0181C92684 /* Pods-PuntoJalisco.debug.xcconfig */,
+				4FB65ED49D68A377A5D64129 /* Pods-PuntoJalisco.release.xcconfig */,
+				478D3AB6C7695A0DE27ECAEB /* Pods-PuntoJaliscoTests.debug.xcconfig */,
+				969F3A5E8FC53F94F9395584 /* Pods-PuntoJaliscoTests.release.xcconfig */,
+				B44794E708963111C8DF46FF /* Pods-PuntoJaliscoUITests.debug.xcconfig */,
+				D006EDDA90AA3147CF308ED4 /* Pods-PuntoJaliscoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -216,12 +237,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC14AD6C1D7FDD6F0027FBA8 /* Build configuration list for PBXNativeTarget "PuntoJalisco" */;
 			buildPhases = (
-				0967327F8A468B3125EE50C4 /* Check Pods Manifest.lock */,
+				4C0A151250FAC7A87C5CC488 /* [CP] Check Pods Manifest.lock */,
 				DC14AD3E1D7FDD6F0027FBA8 /* Sources */,
 				DC14AD3F1D7FDD6F0027FBA8 /* Frameworks */,
 				DC14AD401D7FDD6F0027FBA8 /* Resources */,
-				15283F46D7C2801A2107EC75 /* Embed Pods Frameworks */,
-				E242E8398581E2FD307B7208 /* Copy Pods Resources */,
+				562D469CD71E5BE088539B2F /* [CP] Embed Pods Frameworks */,
+				4BDB0390347E43454C4C14EA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,9 +257,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC14AD6F1D7FDD6F0027FBA8 /* Build configuration list for PBXNativeTarget "PuntoJaliscoTests" */;
 			buildPhases = (
+				42923F4014E8B8FD724ECB2B /* [CP] Check Pods Manifest.lock */,
 				DC14AD541D7FDD6F0027FBA8 /* Sources */,
 				DC14AD551D7FDD6F0027FBA8 /* Frameworks */,
 				DC14AD561D7FDD6F0027FBA8 /* Resources */,
+				A6ECA412E305246A72F5F2EF /* [CP] Embed Pods Frameworks */,
+				191E3445E234EAF253ACA48E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,9 +278,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC14AD721D7FDD6F0027FBA8 /* Build configuration list for PBXNativeTarget "PuntoJaliscoUITests" */;
 			buildPhases = (
+				C4DBAACB824009C459F28A03 /* [CP] Check Pods Manifest.lock */,
 				DC14AD5F1D7FDD6F0027FBA8 /* Sources */,
 				DC14AD601D7FDD6F0027FBA8 /* Frameworks */,
 				DC14AD611D7FDD6F0027FBA8 /* Resources */,
+				16EA5C5F1DE5D0981DB8B47B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -340,14 +366,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0967327F8A468B3125EE50C4 /* Check Pods Manifest.lock */ = {
+		16EA5C5F1DE5D0981DB8B47B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PuntoJaliscoUITests/Pods-PuntoJaliscoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		191E3445E234EAF253ACA48E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PuntoJaliscoTests/Pods-PuntoJaliscoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42923F4014E8B8FD724ECB2B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,14 +411,44 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		15283F46D7C2801A2107EC75 /* Embed Pods Frameworks */ = {
+		4BDB0390347E43454C4C14EA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PuntoJalisco/Pods-PuntoJalisco-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C0A151250FAC7A87C5CC488 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		562D469CD71E5BE088539B2F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,19 +456,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PuntoJalisco/Pods-PuntoJalisco-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E242E8398581E2FD307B7208 /* Copy Pods Resources */ = {
+		A6ECA412E305246A72F5F2EF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PuntoJalisco/Pods-PuntoJalisco-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PuntoJaliscoTests/Pods-PuntoJaliscoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4DBAACB824009C459F28A03 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -395,6 +496,7 @@
 				DCBAF2391D82772C003D7BB7 /* AIFlatSwitch.swift in Sources */,
 				DC14AD461D7FDD6F0027FBA8 /* AppDelegate.swift in Sources */,
 				DCBAF23C1D82852C003D7BB7 /* PJRegisterContainer.swift in Sources */,
+				DCCEBA0D1D83906A0093024D /* PJMapViewController.swift in Sources */,
 				DCBAF23F1D82A7CB003D7BB7 /* PJNetworkCalls.swift in Sources */,
 				DC4DD1391D81318F0094D9F3 /* PJRegisterView.swift in Sources */,
 				DCBAF2411D82AA08003D7BB7 /* Constants.swift in Sources */,
@@ -537,7 +639,7 @@
 		};
 		DC14AD6D1D7FDD6F0027FBA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB596C195AEDFBD27A71DE43 /* Pods-PuntoJalisco.debug.xcconfig */;
+			baseConfigurationReference = DF0EDAA697D4EA0181C92684 /* Pods-PuntoJalisco.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -545,12 +647,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.avidos.PuntoJalisco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PuntoJalisco/PuntoJalisco-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		DC14AD6E1D7FDD6F0027FBA8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A95A37D7D237724A6FE5615C /* Pods-PuntoJalisco.release.xcconfig */;
+			baseConfigurationReference = 4FB65ED49D68A377A5D64129 /* Pods-PuntoJalisco.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -558,11 +661,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.avidos.PuntoJalisco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PuntoJalisco/PuntoJalisco-Bridging-Header.h";
 			};
 			name = Release;
 		};
 		DC14AD701D7FDD6F0027FBA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 478D3AB6C7695A0DE27ECAEB /* Pods-PuntoJaliscoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PuntoJaliscoTests/Info.plist;
@@ -575,6 +680,7 @@
 		};
 		DC14AD711D7FDD6F0027FBA8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 969F3A5E8FC53F94F9395584 /* Pods-PuntoJaliscoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PuntoJaliscoTests/Info.plist;
@@ -587,6 +693,7 @@
 		};
 		DC14AD731D7FDD6F0027FBA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B44794E708963111C8DF46FF /* Pods-PuntoJaliscoUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = PuntoJaliscoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -598,6 +705,7 @@
 		};
 		DC14AD741D7FDD6F0027FBA8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D006EDDA90AA3147CF308ED4 /* Pods-PuntoJaliscoUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = PuntoJaliscoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

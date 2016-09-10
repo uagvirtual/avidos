@@ -7,23 +7,28 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let defaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-//        let nav = self.window?.rootViewController as! UINavigationController
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//        nav.pushViewController(storyBoard.instantiateViewControllerWithIdentifier("PJRegisterView") as! PJRegisterView, animated: false)
+        IQKeyboardManager.sharedManager().enable = true
         
-        let vc:PJRegisterView = storyBoard.instantiateViewControllerWithIdentifier("PJRegisterView") as! PJRegisterView
-//        UIApplication.sharedApplication().keyWindow?.rootViewController = vc
-        self.window?.rootViewController = vc
+        if !defaults.boolForKey(Constants.isRegistred){
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let vc:PJRegisterView = storyBoard.instantiateViewControllerWithIdentifier("PJRegisterView") as! PJRegisterView
+            self.window?.rootViewController = vc
+        }
+        
+        let googleMapsApiKey = "AIzaSyCcy5VPzzvm8lL6RVVGaUglQaSSfUi95FA"
+        GMSServices.provideAPIKey(googleMapsApiKey)
+        
         
         return true
     }
