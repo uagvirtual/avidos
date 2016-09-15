@@ -30,7 +30,7 @@ class PJRegisterView: UIViewController {
     
     let defaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
     var params:[String:String] = [:]
-    let path = Constants.Paths.mainPath + Constants.Paths.registerPath
+    let registerPath = Constants.Paths.mainPath + Constants.Paths.registerPath
     
     var rawResponse = ""
     var parsedResponse = ""
@@ -50,6 +50,7 @@ class PJRegisterView: UIViewController {
         
         if !defaults.boolForKey(Constants.isRegistred) {
             titleLabel.text = "Registrate aquí"
+            registerButton.setTitle("Registrarme", forState: .Normal)
         }
     }
 
@@ -97,7 +98,7 @@ class PJRegisterView: UIViewController {
     func registerUser(){
         showActivityIndicator()
         validateFields()
-        Alamofire.request(.GET, path, parameters:params)
+        Alamofire.request(.GET, registerPath, parameters:params)
             .validate()
             .responseString { response in
                 print("Success: \(response.result.isSuccess)")

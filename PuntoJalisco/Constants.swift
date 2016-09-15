@@ -16,9 +16,22 @@ class Constants: NSObject {
         static let genderKey = "GENERO"
     }
     
+    struct Location {
+        static let routeKey = "RUTA"
+        static let latKey = "LAT"
+        static let lonKey = "LNG"
+        static let hourKey = "HORA"
+        static let id = "IDHARDWARE"
+        static let date = "FECHALOG"
+        static let saturation = "SATURACION"
+        static let distance = "DISTANCIA"
+        static let truckNumber = "NUMCAMION"
+    }
+    
     struct Paths {
         static let mainPath = "http://192.99.41.203:99"
         static let registerPath = "/ws_REGISTRO_APP.ASPX"
+        static let locationPath = "/ws_posiciones.aspx"
     }
     
     static let tokenKey = "token"

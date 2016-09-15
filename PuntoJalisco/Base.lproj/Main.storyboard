@@ -160,7 +160,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q1e-I0-nXL">
                                         <rect key="frame" x="8" y="62" width="584" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                         <connections>
                                             <outlet property="delegate" destination="C3W-iM-Cvv" id="GRF-Xi-MC6"/>
                                         </connections>
@@ -179,6 +179,9 @@
                                         <date key="date" timeIntervalSinceReferenceDate="495088208.44041097">
                                             <!--2016-09-09 04:30:08 +0000-->
                                         </date>
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="536410800">
+                                            <!--2017-12-31 11:00:00 +0000-->
+                                        </date>
                                     </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correo Electronico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVb-jY-4nM">
                                         <rect key="frame" x="8" y="102" width="124" height="17"/>
@@ -189,7 +192,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ad-zO-iPH">
                                         <rect key="frame" x="8" y="124" width="584" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                         <connections>
                                             <outlet property="delegate" destination="C3W-iM-Cvv" id="zZk-Ao-vGp"/>
                                         </connections>
@@ -232,7 +235,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWc-wv-odJ">
                                         <rect key="frame" x="50" y="298" width="55" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gly-ir-okZ" customClass="AIFlatSwitch" customModule="PuntoJalisco" customModuleProvider="target">
@@ -253,7 +256,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mujer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euh-Mh-qdM">
                                         <rect key="frame" x="453" y="298" width="39" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcr-hd-Xbk">
@@ -263,7 +266,7 @@
                                             <constraint firstAttribute="width" secondItem="bcr-hd-Xbk" secondAttribute="height" multiplier="24:5" id="PQ3-sA-NnM"/>
                                             <constraint firstAttribute="height" constant="30" id="mZc-pJ-ipg"/>
                                         </constraints>
-                                        <state key="normal" title="Registrarme">
+                                        <state key="normal" title="Actualizar">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <variation key="default">
@@ -389,10 +392,10 @@
             </objects>
             <point key="canvasLocation" x="2143" y="972"/>
         </scene>
-        <!--View Controller-->
+        <!--Routs View Controller-->
         <scene sceneID="gKh-EW-1BR">
             <objects>
-                <viewController id="kO4-Ul-fJp" sceneMemberID="viewController">
+                <viewController id="kO4-Ul-fJp" customClass="PJRoutsViewController" customModule="PuntoJalisco" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TNg-Rc-xah"/>
                         <viewControllerLayoutGuide type="bottom" id="BG3-Yb-nhY"/>

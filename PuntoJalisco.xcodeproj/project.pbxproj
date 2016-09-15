@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F45E3E2F5B9ED06A1A347D4 /* Pods_PuntoJalisco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EAD86AEA8428EFF38B4C45 /* Pods_PuntoJalisco.framework */; };
 		72E4BCBA154A277126153F8A /* Pods_PuntoJaliscoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91ECF059AE68ED6A6AA06EC /* Pods_PuntoJaliscoTests.framework */; };
+		DC0724CF1D8B4F9E0030E238 /* PJRouteObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0724CE1D8B4F9D0030E238 /* PJRouteObject.swift */; };
 		DC14AD461D7FDD6F0027FBA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC14AD451D7FDD6F0027FBA8 /* AppDelegate.swift */; };
 		DC14AD4D1D7FDD6F0027FBA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC14AD4B1D7FDD6F0027FBA8 /* Main.storyboard */; };
 		DC14AD4F1D7FDD6F0027FBA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC14AD4E1D7FDD6F0027FBA8 /* Assets.xcassets */; };
@@ -16,6 +17,8 @@
 		DC14AD5D1D7FDD6F0027FBA8 /* PuntoJaliscoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC14AD5C1D7FDD6F0027FBA8 /* PuntoJaliscoTests.swift */; };
 		DC14AD681D7FDD6F0027FBA8 /* PuntoJaliscoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC14AD671D7FDD6F0027FBA8 /* PuntoJaliscoUITests.swift */; };
 		DC4DD1391D81318F0094D9F3 /* PJRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DD1381D81318F0094D9F3 /* PJRegisterView.swift */; };
+		DC98D6961D8A666B009E405D /* PJRoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC98D6951D8A666B009E405D /* PJRoutsViewController.swift */; };
+		DCB2E4A31D8B527100167B1C /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB2E4A21D8B527100167B1C /* JSONParser.swift */; };
 		DCBAF2391D82772C003D7BB7 /* AIFlatSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBAF2381D82772C003D7BB7 /* AIFlatSwitch.swift */; };
 		DCBAF23C1D82852C003D7BB7 /* PJRegisterContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBAF23B1D82852C003D7BB7 /* PJRegisterContainer.swift */; };
 		DCBAF23F1D82A7CB003D7BB7 /* PJNetworkCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBAF23E1D82A7CB003D7BB7 /* PJNetworkCalls.swift */; };
@@ -49,6 +52,7 @@
 		B44794E708963111C8DF46FF /* Pods-PuntoJaliscoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoJaliscoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PuntoJaliscoUITests/Pods-PuntoJaliscoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CFE98B13980664EC28B42BF3 /* Pods_PuntoJaliscoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PuntoJaliscoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D006EDDA90AA3147CF308ED4 /* Pods-PuntoJaliscoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoJaliscoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PuntoJaliscoUITests/Pods-PuntoJaliscoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DC0724CE1D8B4F9D0030E238 /* PJRouteObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PJRouteObject.swift; sourceTree = "<group>"; };
 		DC14AD421D7FDD6F0027FBA8 /* PuntoJalisco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuntoJalisco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC14AD451D7FDD6F0027FBA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC14AD4C1D7FDD6F0027FBA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 		DC14AD671D7FDD6F0027FBA8 /* PuntoJaliscoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuntoJaliscoUITests.swift; sourceTree = "<group>"; };
 		DC14AD691D7FDD6F0027FBA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC4DD1381D81318F0094D9F3 /* PJRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PJRegisterView.swift; sourceTree = "<group>"; };
+		DC98D6951D8A666B009E405D /* PJRoutsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PJRoutsViewController.swift; sourceTree = "<group>"; };
+		DCB2E4A21D8B527100167B1C /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		DCBAF2381D82772C003D7BB7 /* AIFlatSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AIFlatSwitch.swift; path = AIFlatSwitch/AIFlatSwitch.swift; sourceTree = "<group>"; };
 		DCBAF23B1D82852C003D7BB7 /* PJRegisterContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PJRegisterContainer.swift; sourceTree = "<group>"; };
 		DCBAF23E1D82A7CB003D7BB7 /* PJNetworkCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PJNetworkCalls.swift; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 				DCBAF23D1D82A79A003D7BB7 /* Network */,
 				DCBAF2361D827626003D7BB7 /* Utilities */,
 				DC4DD13C1D8131B50094D9F3 /* AppDelegate */,
+				DC1DFF631D8B4E63008699A8 /* Model */,
 				DC4DD13B1D8131A00094D9F3 /* Views */,
 				DC4DD13A1D8131940094D9F3 /* Controllers */,
 				DC14AD4E1D7FDD6F0027FBA8 /* Assets.xcassets */,
@@ -165,12 +172,21 @@
 			path = PuntoJaliscoUITests;
 			sourceTree = "<group>";
 		};
+		DC1DFF631D8B4E63008699A8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DC0724CE1D8B4F9D0030E238 /* PJRouteObject.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		DC4DD13A1D8131940094D9F3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				DC4DD1381D81318F0094D9F3 /* PJRegisterView.swift */,
 				DCBAF23B1D82852C003D7BB7 /* PJRegisterContainer.swift */,
 				DCCEBA0C1D83906A0093024D /* PJMapViewController.swift */,
+				DC98D6951D8A666B009E405D /* PJRoutsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -197,6 +213,7 @@
 			children = (
 				DCBAF2371D82762E003D7BB7 /* Switch */,
 				DCBAF2401D82AA08003D7BB7 /* Constants.swift */,
+				DCB2E4A21D8B527100167B1C /* JSONParser.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -494,9 +511,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCBAF2391D82772C003D7BB7 /* AIFlatSwitch.swift in Sources */,
+				DC0724CF1D8B4F9E0030E238 /* PJRouteObject.swift in Sources */,
 				DC14AD461D7FDD6F0027FBA8 /* AppDelegate.swift in Sources */,
 				DCBAF23C1D82852C003D7BB7 /* PJRegisterContainer.swift in Sources */,
 				DCCEBA0D1D83906A0093024D /* PJMapViewController.swift in Sources */,
+				DC98D6961D8A666B009E405D /* PJRoutsViewController.swift in Sources */,
+				DCB2E4A31D8B527100167B1C /* JSONParser.swift in Sources */,
 				DCBAF23F1D82A7CB003D7BB7 /* PJNetworkCalls.swift in Sources */,
 				DC4DD1391D81318F0094D9F3 /* PJRegisterView.swift in Sources */,
 				DCBAF2411D82AA08003D7BB7 /* Constants.swift in Sources */,
@@ -644,6 +664,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PuntoJalisco/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.avidos.PuntoJalisco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -658,6 +679,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PuntoJalisco/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.avidos.PuntoJalisco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
