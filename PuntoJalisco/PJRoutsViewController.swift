@@ -20,15 +20,19 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
     let kRouteCellIdentifier = "RouteCellIdentifier"
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loadingIndicatorContainer: UIView!
+    @IBOutlet weak var activitiIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        getLocation()
         
         let routeCell = UINib(nibName: "PJRouteTableViewCell", bundle: nil)
         tableView.registerNib(routeCell, forCellReuseIdentifier: kRouteCellIdentifier)
         
+        loadingIndicatorContainer.layer.cornerRadius = 10
+        loadingIndicatorContainer.alpha = 0
+        
+        getLocation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +42,7 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
 
     func getLocation(){
+        showActivityIndicator()
         print("[ROUTES] - getLocation started")
         Alamofire.request(.GET, locationPath, parameters:params)
             .validate()
@@ -51,7 +56,7 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
                 print(self.routesArray)
                 self.tableView.reloadData()
-                
+                self.hideActivityIndicator()
         }
     }
     
@@ -74,5 +79,19 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.backgroundColor = cellBackgroundColor
+    }
+    
+    func showActivityIndicator(){
+        activitiIndicator.startAnimating()
+        UIView.animateWithDuration(0.3, animations: {
+            self.loadingIndicatorContainer.alpha = 1
+            }, completion: nil)
+    }
+    
+    func hideActivityIndicator(){
+        activitiIndicator.stopAnimating()
+        UIView.animateWithDuration(0.3, animations: {
+            self.loadingIndicatorContainer.alpha = 0
+        }) { (completed) in }
     }
 }

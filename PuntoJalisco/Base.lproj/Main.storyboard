@@ -421,9 +421,29 @@
                                     <outlet property="delegate" destination="kO4-Ul-fJp" id="oFO-ZD-voH"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UIk-sR-idR">
+                                <rect key="frame" x="270" y="270" width="60" height="60"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="sB7-C5-wBc">
+                                        <rect key="frame" x="12" y="12" width="37" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="37" id="goy-qV-mZn"/>
+                                            <constraint firstAttribute="height" constant="37" id="ioi-XU-ilC"/>
+                                        </constraints>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="sB7-C5-wBc" firstAttribute="centerX" secondItem="UIk-sR-idR" secondAttribute="centerX" id="8Kh-YJ-vik"/>
+                                    <constraint firstAttribute="height" constant="60" id="BaF-Uy-hwJ"/>
+                                    <constraint firstItem="sB7-C5-wBc" firstAttribute="centerY" secondItem="UIk-sR-idR" secondAttribute="centerY" id="HSM-e5-Yqd"/>
+                                    <constraint firstAttribute="width" constant="60" id="ubp-YA-Cng"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="UIk-sR-idR" firstAttribute="centerX" secondItem="bhf-64-ZBK" secondAttribute="centerX" id="0xo-Fe-hXe"/>
                             <constraint firstAttribute="trailing" secondItem="urv-1m-EYt" secondAttribute="trailing" id="8BC-H2-YSD"/>
                             <constraint firstItem="Pg5-ng-EA4" firstAttribute="leading" secondItem="bhf-64-ZBK" secondAttribute="leading" id="8TE-AU-Wk4"/>
                             <constraint firstItem="a4J-Rf-y9O" firstAttribute="width" secondItem="bhf-64-ZBK" secondAttribute="width" multiplier="0.33" id="Lhz-4h-uGQ"/>
@@ -433,12 +453,15 @@
                             <constraint firstItem="BG3-Yb-nhY" firstAttribute="top" secondItem="Pg5-ng-EA4" secondAttribute="bottom" id="VvC-mi-XTp"/>
                             <constraint firstItem="a4J-Rf-y9O" firstAttribute="centerX" secondItem="bhf-64-ZBK" secondAttribute="centerX" id="Wvk-wp-UFA"/>
                             <constraint firstItem="urv-1m-EYt" firstAttribute="leading" secondItem="bhf-64-ZBK" secondAttribute="leading" id="Y6c-ji-NLd"/>
+                            <constraint firstItem="UIk-sR-idR" firstAttribute="centerY" secondItem="bhf-64-ZBK" secondAttribute="centerY" id="bqb-iZ-Eg8"/>
                             <constraint firstItem="a4J-Rf-y9O" firstAttribute="top" secondItem="TNg-Rc-xah" secondAttribute="bottom" constant="10" id="sfJ-AZ-s8A"/>
                             <constraint firstItem="BG3-Yb-nhY" firstAttribute="top" secondItem="urv-1m-EYt" secondAttribute="bottom" id="v6D-w8-fnD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wpU-lq-pc3"/>
                     <connections>
+                        <outlet property="activitiIndicator" destination="sB7-C5-wBc" id="KAd-Nb-ceb"/>
+                        <outlet property="loadingIndicatorContainer" destination="UIk-sR-idR" id="QeM-6R-TV6"/>
                         <outlet property="tableView" destination="urv-1m-EYt" id="Fxq-t6-blp"/>
                     </connections>
                 </viewController>
