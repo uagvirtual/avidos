@@ -413,19 +413,34 @@
                                     <constraint firstAttribute="width" secondItem="a4J-Rf-y9O" secondAttribute="height" multiplier="198:73" id="J4F-Rk-Hod"/>
                                 </constraints>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="urv-1m-EYt">
+                                <rect key="frame" x="0.0" y="113" width="600" height="438"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="kO4-Ul-fJp" id="cD7-lE-IlG"/>
+                                    <outlet property="delegate" destination="kO4-Ul-fJp" id="oFO-ZD-voH"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="urv-1m-EYt" secondAttribute="trailing" id="8BC-H2-YSD"/>
                             <constraint firstItem="Pg5-ng-EA4" firstAttribute="leading" secondItem="bhf-64-ZBK" secondAttribute="leading" id="8TE-AU-Wk4"/>
                             <constraint firstItem="a4J-Rf-y9O" firstAttribute="width" secondItem="bhf-64-ZBK" secondAttribute="width" multiplier="0.33" id="Lhz-4h-uGQ"/>
+                            <constraint firstItem="urv-1m-EYt" firstAttribute="top" secondItem="a4J-Rf-y9O" secondAttribute="bottom" constant="10" id="NXl-V4-9Kr"/>
                             <constraint firstItem="Pg5-ng-EA4" firstAttribute="top" secondItem="bhf-64-ZBK" secondAttribute="top" id="SH9-Xb-1Tr"/>
                             <constraint firstAttribute="trailing" secondItem="Pg5-ng-EA4" secondAttribute="trailing" id="ScS-4O-JdS"/>
                             <constraint firstItem="BG3-Yb-nhY" firstAttribute="top" secondItem="Pg5-ng-EA4" secondAttribute="bottom" id="VvC-mi-XTp"/>
                             <constraint firstItem="a4J-Rf-y9O" firstAttribute="centerX" secondItem="bhf-64-ZBK" secondAttribute="centerX" id="Wvk-wp-UFA"/>
+                            <constraint firstItem="urv-1m-EYt" firstAttribute="leading" secondItem="bhf-64-ZBK" secondAttribute="leading" id="Y6c-ji-NLd"/>
                             <constraint firstItem="a4J-Rf-y9O" firstAttribute="top" secondItem="TNg-Rc-xah" secondAttribute="bottom" constant="10" id="sfJ-AZ-s8A"/>
+                            <constraint firstItem="BG3-Yb-nhY" firstAttribute="top" secondItem="urv-1m-EYt" secondAttribute="bottom" id="v6D-w8-fnD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wpU-lq-pc3"/>
+                    <connections>
+                        <outlet property="tableView" destination="urv-1m-EYt" id="Fxq-t6-blp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWf-Ef-gFP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -24,6 +24,8 @@
 		DCBAF23F1D82A7CB003D7BB7 /* PJNetworkCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBAF23E1D82A7CB003D7BB7 /* PJNetworkCalls.swift */; };
 		DCBAF2411D82AA08003D7BB7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBAF2401D82AA08003D7BB7 /* Constants.swift */; };
 		DCCEBA0D1D83906A0093024D /* PJMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCEBA0C1D83906A0093024D /* PJMapViewController.swift */; };
+		DCD39C831D8BA36300479EC2 /* PJRouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD39C811D8BA36300479EC2 /* PJRouteTableViewCell.swift */; };
+		DCD39C841D8BA36300479EC2 /* PJRouteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCD39C821D8BA36300479EC2 /* PJRouteTableViewCell.xib */; };
 		FD081DF91C55C1225E37A6CE /* Pods_PuntoJaliscoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE98B13980664EC28B42BF3 /* Pods_PuntoJaliscoUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		DCBAF2401D82AA08003D7BB7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DCCEBA0C1D83906A0093024D /* PJMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PJMapViewController.swift; sourceTree = "<group>"; };
 		DCCEBA0E1D8391E90093024D /* PuntoJalisco-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PuntoJalisco-Bridging-Header.h"; path = "PuntoJalisco/PuntoJalisco-Bridging-Header.h"; sourceTree = "<group>"; };
+		DCD39C811D8BA36300479EC2 /* PJRouteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PJRouteTableViewCell.swift; sourceTree = "<group>"; };
+		DCD39C821D8BA36300479EC2 /* PJRouteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJRouteTableViewCell.xib; sourceTree = "<group>"; };
 		DF0EDAA697D4EA0181C92684 /* Pods-PuntoJalisco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoJalisco.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PuntoJalisco/Pods-PuntoJalisco.debug.xcconfig"; sourceTree = "<group>"; };
 		E91ECF059AE68ED6A6AA06EC /* Pods_PuntoJaliscoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PuntoJaliscoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -194,6 +198,7 @@
 		DC4DD13B1D8131A00094D9F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DCD39C801D8BA02100479EC2 /* Cells */,
 				DC14AD4B1D7FDD6F0027FBA8 /* Main.storyboard */,
 				DC14AD501D7FDD6F0027FBA8 /* LaunchScreen.storyboard */,
 			);
@@ -232,6 +237,15 @@
 				DCBAF23E1D82A7CB003D7BB7 /* PJNetworkCalls.swift */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		DCD39C801D8BA02100479EC2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DCD39C811D8BA36300479EC2 /* PJRouteTableViewCell.swift */,
+				DCD39C821D8BA36300479EC2 /* PJRouteTableViewCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		FA3FBDDDB225ADEDC426A58A /* Pods */ = {
@@ -361,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC14AD521D7FDD6F0027FBA8 /* LaunchScreen.storyboard in Resources */,
+				DCD39C841D8BA36300479EC2 /* PJRouteTableViewCell.xib in Resources */,
 				DC14AD4F1D7FDD6F0027FBA8 /* Assets.xcassets in Resources */,
 				DC14AD4D1D7FDD6F0027FBA8 /* Main.storyboard in Resources */,
 			);
@@ -518,6 +533,7 @@
 				DC98D6961D8A666B009E405D /* PJRoutsViewController.swift in Sources */,
 				DCB2E4A31D8B527100167B1C /* JSONParser.swift in Sources */,
 				DCBAF23F1D82A7CB003D7BB7 /* PJNetworkCalls.swift in Sources */,
+				DCD39C831D8BA36300479EC2 /* PJRouteTableViewCell.swift in Sources */,
 				DC4DD1391D81318F0094D9F3 /* PJRegisterView.swift in Sources */,
 				DCBAF2411D82AA08003D7BB7 /* Constants.swift in Sources */,
 			);
