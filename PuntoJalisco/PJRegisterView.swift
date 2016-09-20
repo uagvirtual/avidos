@@ -14,6 +14,7 @@ class PJRegisterView: UIViewController {
     enum Gender {
         case Male
         case Female
+        case None
     }
     var genderType:Gender!
     
@@ -52,6 +53,7 @@ class PJRegisterView: UIViewController {
             titleLabel.text = "Registrate aquí"
             registerButton.setTitle("Registrarme", forState: .Normal)
         }
+        genderType = Gender.None
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,8 +98,10 @@ class PJRegisterView: UIViewController {
     }
 
     func registerUser(){
-        showActivityIndicator()
         validateFields()
+    }
+    
+    func networkCall(){
         Alamofire.request(.GET, registerPath, parameters:params)
             .validate()
             .responseString { response in
@@ -158,8 +162,19 @@ class PJRegisterView: UIViewController {
             }
         }
         
-        let genderSelected = genderType == .Male ? "H" : "M"
-        params[Constants.Register.genderKey] = genderSelected
+        if genderType != Gender.None{
+            let genderSelected = genderType == .Male ? "H" : "M"
+            params[Constants.Register.genderKey] = genderSelected
+        }
+        
+        if fullNameTextField.text?.characters.count > 0 || emailTextField.text?.characters.count > 0 {
+            showActivityIndicator()
+            networkCall()
+        }else{
+            let alertController = UIAlertController(title: "Alerta", message:"Los campos no deben estar vacios, por favor verificalos", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default,handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
         
         print(params)
     }

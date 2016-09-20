@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1F45E3E2F5B9ED06A1A347D4 /* Pods_PuntoJalisco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EAD86AEA8428EFF38B4C45 /* Pods_PuntoJalisco.framework */; };
 		72E4BCBA154A277126153F8A /* Pods_PuntoJaliscoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91ECF059AE68ED6A6AA06EC /* Pods_PuntoJaliscoTests.framework */; };
+		8BFF2CBC1D8C7D100014672B /* PJRouteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF2CBB1D8C7D100014672B /* PJRouteManager.swift */; };
+		8BFF2CC01D8C9EC30014672B /* PJRouteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF2CBF1D8C9EC30014672B /* PJRouteDetailViewController.swift */; };
 		DC0724CF1D8B4F9E0030E238 /* PJRouteObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0724CE1D8B4F9D0030E238 /* PJRouteObject.swift */; };
 		DC14AD461D7FDD6F0027FBA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC14AD451D7FDD6F0027FBA8 /* AppDelegate.swift */; };
 		DC14AD4D1D7FDD6F0027FBA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC14AD4B1D7FDD6F0027FBA8 /* Main.storyboard */; };
@@ -50,6 +52,8 @@
 		14EAD86AEA8428EFF38B4C45 /* Pods_PuntoJalisco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PuntoJalisco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		478D3AB6C7695A0DE27ECAEB /* Pods-PuntoJaliscoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoJaliscoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PuntoJaliscoTests/Pods-PuntoJaliscoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4FB65ED49D68A377A5D64129 /* Pods-PuntoJalisco.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoJalisco.release.xcconfig"; path = "Pods/Target Support Files/Pods-PuntoJalisco/Pods-PuntoJalisco.release.xcconfig"; sourceTree = "<group>"; };
+		8BFF2CBB1D8C7D100014672B /* PJRouteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PJRouteManager.swift; sourceTree = "<group>"; };
+		8BFF2CBF1D8C9EC30014672B /* PJRouteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PJRouteDetailViewController.swift; sourceTree = "<group>"; };
 		969F3A5E8FC53F94F9395584 /* Pods-PuntoJaliscoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoJaliscoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PuntoJaliscoTests/Pods-PuntoJaliscoTests.release.xcconfig"; sourceTree = "<group>"; };
 		B44794E708963111C8DF46FF /* Pods-PuntoJaliscoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoJaliscoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PuntoJaliscoUITests/Pods-PuntoJaliscoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CFE98B13980664EC28B42BF3 /* Pods_PuntoJaliscoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PuntoJaliscoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +124,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8BFF2CBA1D8C7CF50014672B /* RouteManager */ = {
+			isa = PBXGroup;
+			children = (
+				8BFF2CBB1D8C7D100014672B /* PJRouteManager.swift */,
+			);
+			name = RouteManager;
+			sourceTree = "<group>";
+		};
 		DC14AD391D7FDD6F0027FBA8 = {
 			isa = PBXGroup;
 			children = (
@@ -187,10 +199,12 @@
 		DC4DD13A1D8131940094D9F3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8BFF2CBA1D8C7CF50014672B /* RouteManager */,
 				DC4DD1381D81318F0094D9F3 /* PJRegisterView.swift */,
 				DCBAF23B1D82852C003D7BB7 /* PJRegisterContainer.swift */,
 				DCCEBA0C1D83906A0093024D /* PJMapViewController.swift */,
 				DC98D6951D8A666B009E405D /* PJRoutsViewController.swift */,
+				8BFF2CBF1D8C9EC30014672B /* PJRouteDetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -525,9 +539,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BFF2CC01D8C9EC30014672B /* PJRouteDetailViewController.swift in Sources */,
 				DCBAF2391D82772C003D7BB7 /* AIFlatSwitch.swift in Sources */,
 				DC0724CF1D8B4F9E0030E238 /* PJRouteObject.swift in Sources */,
 				DC14AD461D7FDD6F0027FBA8 /* AppDelegate.swift in Sources */,
+				8BFF2CBC1D8C7D100014672B /* PJRouteManager.swift in Sources */,
 				DCBAF23C1D82852C003D7BB7 /* PJRegisterContainer.swift in Sources */,
 				DCCEBA0D1D83906A0093024D /* PJMapViewController.swift in Sources */,
 				DC98D6961D8A666B009E405D /* PJRoutsViewController.swift in Sources */,

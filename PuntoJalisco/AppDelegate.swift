@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let googleMapsApiKey = "AIzaSyCcy5VPzzvm8lL6RVVGaUglQaSSfUi95FA"
         GMSServices.provideAPIKey(googleMapsApiKey)
         
+        PJRouteManager.sharedInstance        
         
         return true
     }

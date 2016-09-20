@@ -11,10 +11,11 @@ import Alamofire
 
 class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let locationPath = Constants.Paths.mainPath + Constants.Paths.locationPath
+    let locationPath = Constants.Paths.mainPath + Constants.Paths.routesPath
     let cellBackgroundColor = UIColor(red: 117.0/255.0, green: 0, blue: 27.0/255.0, alpha: 1)
     
-    var params:[String:String] = [Constants.Location.routeKey:"368", Constants.Location.latKey:"20.6716283647243", Constants.Location.lonKey:"-103.368670"]
+//    var params:[String:String] = [Constants.Location.routeKey:"368", Constants.Location.latKey:"20.6716283647243", Constants.Location.lonKey:"-103.368670"]
+    var params:[String:String] = [Constants.Location.cityKey:"GUADALAJARA"]
     var parsedResponse = ""
     var routesArray:[PJRouteObject] = []
     let kRouteCellIdentifier = "RouteCellIdentifier"
@@ -70,11 +71,19 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:PJRouteTableViewCell = tableView.dequeueReusableCellWithIdentifier(kRouteCellIdentifier) as! PJRouteTableViewCell
-        cell.routeLabel.text = "Ruta " + routesArray[indexPath.row].routeNumber!
+        cell.routeLabel.text = "Ruta " + routesArray[indexPath.row].routeName!
         cell.accessoryType = .DisclosureIndicator
 //        cell.accessoryView?.backgroundColor = UIColor.clearColor()
         cell.contentView
+        cell.selectionStyle = .None
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        PJRouteManager.sharedInstance.setRoute(routesArray[indexPath.row])
+//        PJRouteManager.sharedInstance.displayCurrentRoute()
+        performSegueWithIdentifier("toRouteDetail", sender: self)
+        
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {

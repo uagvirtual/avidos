@@ -21,17 +21,25 @@ class Constants: NSObject {
         static let latKey = "LAT"
         static let lonKey = "LNG"
         static let hourKey = "HORA"
-        static let id = "IDHARDWARE"
-        static let date = "FECHALOG"
-        static let saturation = "SATURACION"
-        static let distance = "DISTANCIA"
-        static let truckNumber = "NUMCAMION"
+        static let idKey = "IDHARDWARE"
+        static let dateKey = "FECHALOG"
+        static let saturationKey = "SATURACION"
+        static let distanceKey = "DISTANCIA"
+        static let truckNumberKey = "NUMCAMION"
+        static let baseKey = "base"
+        static let firstRideKey = "primersalida"
+        static let lastRideKey = "ultimasalida"
+        static let durationKey = "duracion"
+        static let routeNameKey = "nombreruta"
+        static let cityKey = "ciudad"
+        
     }
     
     struct Paths {
         static let mainPath = "http://192.99.41.203:99"
         static let registerPath = "/ws_REGISTRO_APP.ASPX"
         static let locationPath = "/ws_posiciones.aspx"
+        static let routesPath = "/ws_rutas.aspx"
     }
     
     static let tokenKey = "token"

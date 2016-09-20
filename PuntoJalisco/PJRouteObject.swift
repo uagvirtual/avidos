@@ -20,6 +20,14 @@ class PJRouteObject: NSObject {
     var distance:String?
     var truckNumber:String?
     
+    var base:String?
+    var firstRide:String?
+    var lastRide:String?
+    var duration:String?
+    var routeName:String?
+    var city:String? 
+    
+    
     override init() {
         super.init()
     }
@@ -32,18 +40,26 @@ class PJRouteObject: NSObject {
     func configure(route:[String:String]) -> PJRouteObject{
         print(route)
         hour = route[Constants.Location.hourKey]
-        id = route[Constants.Location.id]
+        id = route[Constants.Location.idKey]
         lon = route[Constants.Location.lonKey]
         routeNumber = route[Constants.Location.routeKey]
-        date = route[Constants.Location.date]
-        saturation = route[Constants.Location.saturation]
+        date = route[Constants.Location.dateKey]
+        saturation = route[Constants.Location.saturationKey]
         lat = route[Constants.Location.latKey]
-        distance = route[Constants.Location.distance]
-        truckNumber = route[Constants.Location.truckNumber]
+        distance = route[Constants.Location.distanceKey]
+        truckNumber = route[Constants.Location.truckNumberKey]
+        
+        base = route[Constants.Location.baseKey]
+        firstRide = route[Constants.Location.firstRideKey]
+        lastRide = route[Constants.Location.lastRideKey]
+        duration = route[Constants.Location.durationKey]
+        routeName = route[Constants.Location.routeNameKey]
+        city = route[Constants.Location.cityKey]
+        
         return self
     }
     
     func printDebug(){
-        print("Hora: \(hour!)\nId Hardware: \(id!)\nLat: \(lat!)\nLon: \(lon!)\nRuta: \(routeNumber!)\nFecha Log: \(date!)\nSaturacion: \(saturation!)\nDistancia: \(distance!)\nNumero de Camion: \(truckNumber!)\n")
+        print("\n---> [ROUTE MANAGER] Current Route\nBase: \(base)\nPrimer Salida: \(firstRide)\nUltimaSalid: \(lastRide)\nDuracion: \(duration)\nNombre: \(routeName)\nCiudad: \(city)\n----\nHora: \(hour)\nId Hardware: \(id)\nLat: \(lat)\nLon: \(lon)\nRuta: \(routeNumber)\nFecha Log: \(date)\nSaturacion: \(saturation)\nDistancia: \(distance)\nNumero de Camion: \(truckNumber)\n")
     }
 }
