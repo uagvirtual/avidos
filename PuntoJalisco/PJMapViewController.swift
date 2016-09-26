@@ -10,6 +10,9 @@ import UIKit
 
 class PJMapViewController: UIViewController, GMSMapViewDelegate {
 
+    let response = "[{\"RUTA\":\"368\",\"LAT\":\"20.70808167\",\"LNG\":\"103.36826833\",\"FECHALOG\":\"19/07/2016 12:00:00 a. m.\",\"HORA\":\"14:05:36\",\"IDHARDWARE\":\"1001\",\"NUMCAMION\":\"1001\",\"DISTANCIA\":\"4057.1374051846\",\"SATURACION\":\"G\"},{\"RUTA\":\"368\",\"LAT\":\"20.61541500\",\"LNG\":\"103.29106667\",\"FECHALOG\":\"19/07/2016 12:00:00 a. m.\",\"HORA\":\"00:11:34\",\"IDHARDWARE\":\"1002\",\"NUMCAMION\":\"1002\",\"DISTANCIA\":\"10220.4152518387\",\"SATURACION\":\"G\"}]"
+    var routesArray:[PJRouteObject] = []
+    
     @IBOutlet weak var mapView: GMSMapView!
     let locationManager = CLLocationManager()
     
@@ -19,7 +22,12 @@ class PJMapViewController: UIViewController, GMSMapViewDelegate {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
-        
+        let parsedRoutes = JSONParser().parseJSON(response)
+        for eachRoute in parsedRoutes{
+            let route = PJRouteObject.init(route: eachRoute as! [String : String])
+            self.routesArray.append(route)
+        }
+        print(self.routesArray) 
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,30 +49,21 @@ class PJMapViewController: UIViewController, GMSMapViewDelegate {
 }
 
 // MARK: - CLLocationManagerDelegate
-//1
 extension PJMapViewController: CLLocationManagerDelegate {
-    // 2
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        // 3
         if status == .AuthorizedWhenInUse {
             
-            // 4
             locationManager.startUpdatingLocation()
             
-            //5
             mapView.myLocationEnabled = true
             mapView.settings.myLocationButton = true
         }
     }
     
-    // 6
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            
-            // 7
             mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
             
-            // 8
             locationManager.stopUpdatingLocation()
         }
         

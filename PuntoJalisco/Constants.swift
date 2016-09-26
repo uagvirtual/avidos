@@ -21,7 +21,7 @@ class Constants: NSObject {
         static let latKey = "LAT"
         static let lonKey = "LNG"
         static let hourKey = "HORA"
-        static let idKey = "IDHARDWARE"
+        static let idHardwareKey = "IDHARDWARE"
         static let dateKey = "FECHALOG"
         static let saturationKey = "SATURACION"
         static let distanceKey = "DISTANCIA"

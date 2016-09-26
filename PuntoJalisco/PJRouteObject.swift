@@ -40,7 +40,7 @@ class PJRouteObject: NSObject {
     func configure(route:[String:String]) -> PJRouteObject{
         print(route)
         hour = route[Constants.Location.hourKey]
-        id = route[Constants.Location.idKey]
+        id = route[Constants.Location.idHardwareKey]
         lon = route[Constants.Location.lonKey]
         routeNumber = route[Constants.Location.routeKey]
         date = route[Constants.Location.dateKey]

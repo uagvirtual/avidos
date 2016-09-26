@@ -751,16 +751,31 @@
                                     <constraint firstAttribute="width" constant="60" id="ubp-YA-Cng"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRI-5c-Yod">
+                                <rect key="frame" x="550" y="52" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Wit-dL-hVk"/>
+                                    <constraint firstAttribute="width" constant="30" id="bLV-TE-1zj"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="refresh-1">
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="refreshButtonPressed:" destination="kO4-Ul-fJp" eventType="touchUpInside" id="Vg3-Wx-usc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UIk-sR-idR" firstAttribute="centerX" secondItem="bhf-64-ZBK" secondAttribute="centerX" id="0xo-Fe-hXe"/>
                             <constraint firstAttribute="trailing" secondItem="urv-1m-EYt" secondAttribute="trailing" id="8BC-H2-YSD"/>
                             <constraint firstItem="Pg5-ng-EA4" firstAttribute="leading" secondItem="bhf-64-ZBK" secondAttribute="leading" id="8TE-AU-Wk4"/>
+                            <constraint firstItem="fRI-5c-Yod" firstAttribute="centerY" secondItem="a4J-Rf-y9O" secondAttribute="centerY" id="JuB-Ax-r2L"/>
                             <constraint firstItem="a4J-Rf-y9O" firstAttribute="width" secondItem="bhf-64-ZBK" secondAttribute="width" multiplier="0.33" id="Lhz-4h-uGQ"/>
                             <constraint firstItem="urv-1m-EYt" firstAttribute="top" secondItem="a4J-Rf-y9O" secondAttribute="bottom" constant="10" id="NXl-V4-9Kr"/>
                             <constraint firstItem="Pg5-ng-EA4" firstAttribute="top" secondItem="bhf-64-ZBK" secondAttribute="top" id="SH9-Xb-1Tr"/>
                             <constraint firstAttribute="trailing" secondItem="Pg5-ng-EA4" secondAttribute="trailing" id="ScS-4O-JdS"/>
+                            <constraint firstItem="fRI-5c-Yod" firstAttribute="trailing" secondItem="bhf-64-ZBK" secondAttribute="trailingMargin" id="TvR-e2-dnu"/>
                             <constraint firstItem="BG3-Yb-nhY" firstAttribute="top" secondItem="Pg5-ng-EA4" secondAttribute="bottom" id="VvC-mi-XTp"/>
                             <constraint firstItem="a4J-Rf-y9O" firstAttribute="centerX" secondItem="bhf-64-ZBK" secondAttribute="centerX" id="Wvk-wp-UFA"/>
                             <constraint firstItem="urv-1m-EYt" firstAttribute="leading" secondItem="bhf-64-ZBK" secondAttribute="leading" id="Y6c-ji-NLd"/>
@@ -893,6 +908,7 @@
         <image name="logo_punto_jalisco" width="472" height="175"/>
         <image name="loop" width="290" height="290"/>
         <image name="map" width="25" height="25"/>
+        <image name="refresh-1" width="250" height="250"/>
         <image name="settings" width="25" height="25"/>
         <image name="splash" width="1024" height="768"/>
     </resources>

@@ -41,8 +41,16 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func refreshButtonPressed(sender: AnyObject) {
+        getLocation()
+    }
 
     func getLocation(){
+        if routesArray.count > 0{
+            routesArray.removeAll()
+        }
+        
         showActivityIndicator()
         print("[ROUTES] - getLocation started")
         Alamofire.request(.GET, locationPath, parameters:params)
