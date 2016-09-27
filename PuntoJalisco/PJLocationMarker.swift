@@ -15,9 +15,10 @@ class PJLocationMarker: GMSMarker {
         self.route = route
         super.init()
         
+        print("Latitude: \((route.lat! as NSString).doubleValue) - Longitude: \((route.lon! as NSString).doubleValue)")
         position = CLLocationCoordinate2DMake((route.lat! as NSString).doubleValue, (route.lon! as NSString).doubleValue)
         icon = UIImage(named: "greenBus")
-        groundAnchor = CGPoint(x: 0.5, y: 1)
+        groundAnchor = CGPoint(x: 0, y: 0)
         appearAnimation = kGMSMarkerAnimationPop
     }
 }
