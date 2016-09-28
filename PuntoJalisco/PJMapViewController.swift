@@ -11,7 +11,7 @@ import Alamofire
 
 class PJMapViewController: UIViewController, GMSMapViewDelegate {
 
-    let response = "[{\"RUTA\":\"368\",\"LAT\":\"20.70808167\",\"LNG\":\"-103.36826833\",\"FECHALOG\":\"19/07/2016 12:00:00 a. m.\",\"HORA\":\"14:05:36\",\"IDHARDWARE\":\"1001\",\"NUMCAMION\":\"1001\",\"DISTANCIA\":\"4057.1374051846\",\"SATURACION\":\"G\"},{\"RUTA\":\"368\",\"LAT\":\"20.690146\",\"LNG\":\"-103.315151\",\"FECHALOG\":\"19/07/2016 12:00:00 a. m.\",\"HORA\":\"00:11:34\",\"IDHARDWARE\":\"1002\",\"NUMCAMION\":\"1002\",\"DISTANCIA\":\"10220.4152518387\",\"SATURACION\":\"G\"}]"
+    let response = "[{\"RUTA\":\"368\",\"LAT\":\"20.70808167\",\"LNG\":\"-103.36826833\",\"FECHALOG\":\"19/07/2016 12:00:00 a. m.\",\"HORA\":\"14:05:36\",\"IDHARDWARE\":\"1001\",\"NUMCAMION\":\"1001\",\"DISTANCIA\":\"4057.1374051846\",\"SATURACION\":\"G\"},{\"RUTA\":\"368\",\"LAT\":\"20.690146\",\"LNG\":\"-103.315151\",\"FECHALOG\":\"19/07/2016 12:00:00 a. m.\",\"HORA\":\"00:11:34\",\"IDHARDWARE\":\"1002\",\"NUMCAMION\":\"1002\",\"DISTANCIA\":\"10220.4152518387\",\"SATURACION\":\"R\"}]"
     var routesArray:[PJRouteObject] = []
     var markersArray:[GMSMarker] = []
     var path:GMSMutablePath = GMSMutablePath()

@@ -20,6 +20,8 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
     var routesArray:[PJRouteObject] = []
     let kRouteCellIdentifier = "RouteCellIdentifier"
     
+    let response = "[{\"base\":\"TROMPO MÁGICO\",\"primersalida\":\"5:00\",\"ultimasalida\":\"22:30\",\"duracion\":\"3\",\"nombreruta\":\"368\",\"ciudad\":\"GUADALAJARA\"},{\"base\":\"BASILIO BADILLO (TONALÁ)\",\"primersalida\":\"5:00\",\"ultimasalida\":\"22:30\",\"duracion\":\"3\",\"nombreruta\":\"368\",\"ciudad\":\"GUADALAJARA\"}]"
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingIndicatorContainer: UIView!
     @IBOutlet weak var activitiIndicator: UIActivityIndicatorView!
@@ -33,7 +35,17 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
         loadingIndicatorContainer.layer.cornerRadius = 10
         loadingIndicatorContainer.alpha = 0
         
-        getLocation()
+//        getLocation()
+        
+        //Dev mode
+        let parsedRoutes = JSONParser().parseJSON(response)
+        for eachRoute in parsedRoutes{
+            let route = PJRouteObject.init(route: eachRoute as! [String : String])
+            self.routesArray.append(route)
+        }
+        print(self.routesArray)
+        self.tableView.reloadData()
+        self.hideActivityIndicator()
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,15 +69,22 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
             .validate()
             .responseString { response in
                 print("Success: \(response.result.isSuccess)")
-                //print(response.result.debugDescription)
-                let parsedRoutes = JSONParser().parseJSON(response.result.debugDescription)
-                for eachRoute in parsedRoutes{
-                    let route = PJRouteObject.init(route: eachRoute as! [String : String])
-                    self.routesArray.append(route)
+                if response.result.isSuccess{
+                    //print(response.result.debugDescription)
+                    let parsedRoutes = JSONParser().parseJSON(response.result.debugDescription)
+                    for eachRoute in parsedRoutes{
+                        let route = PJRouteObject.init(route: eachRoute as! [String : String])
+                        self.routesArray.append(route)
+                    }
+                    print(self.routesArray)
+                    self.tableView.reloadData()
+                    self.hideActivityIndicator()
+                }else{
+                    self.hideActivityIndicator()
+                    let alertController = UIAlertController(title: "Atención", message:"Ha ocurrido un error, por favor intentalo mas tarde.", preferredStyle: UIAlertControllerStyle.Alert)
+                    alertController.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default,handler: nil))
+                    self.presentViewController(alertController, animated: true, completion: nil)
                 }
-                print(self.routesArray)
-                self.tableView.reloadData()
-                self.hideActivityIndicator()
         }
     }
     
