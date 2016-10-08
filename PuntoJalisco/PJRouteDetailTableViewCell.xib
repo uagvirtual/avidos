@@ -29,7 +29,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.45882352939999999" green="0.0" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.45882352941176469" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="tKt-yh-bdO" firstAttribute="leading" secondItem="adD-1a-8PI" secondAttribute="leading" constant="15" id="LfV-HS-bMg"/>
                                     <constraint firstItem="tKt-yh-bdO" firstAttribute="centerY" secondItem="adD-1a-8PI" secondAttribute="centerY" id="MAo-b7-EpM"/>
@@ -267,6 +267,7 @@
                 <outlet property="durationLabel" destination="YPt-Em-g4c" id="9oI-rH-qVn"/>
                 <outlet property="firstTripLabel" destination="O8S-Wp-aIc" id="0Ps-Nj-SP8"/>
                 <outlet property="lastTripLabel" destination="Lo0-zb-Nf3" id="FeJ-Uo-seX"/>
+                <outlet property="titleLabel" destination="tKt-yh-bdO" id="tBB-e9-vU7"/>
             </connections>
             <point key="canvasLocation" x="673" y="369.5"/>
         </tableViewCell>

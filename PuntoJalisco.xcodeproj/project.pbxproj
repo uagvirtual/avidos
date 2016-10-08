@@ -32,7 +32,6 @@
 		DCBAF23F1D82A7CB003D7BB7 /* PJNetworkCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBAF23E1D82A7CB003D7BB7 /* PJNetworkCalls.swift */; };
 		DCBAF2411D82AA08003D7BB7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBAF2401D82AA08003D7BB7 /* Constants.swift */; };
 		DCCEBA0D1D83906A0093024D /* PJMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCEBA0C1D83906A0093024D /* PJMapViewController.swift */; };
-		DCD11D501DA0912400B1B3DB /* RouteDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD11D4F1DA0912400B1B3DB /* RouteDetailTableViewController.swift */; };
 		DCD39C831D8BA36300479EC2 /* PJRouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD39C811D8BA36300479EC2 /* PJRouteTableViewCell.swift */; };
 		DCD39C841D8BA36300479EC2 /* PJRouteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCD39C821D8BA36300479EC2 /* PJRouteTableViewCell.xib */; };
 		FD081DF91C55C1225E37A6CE /* Pods_PuntoJaliscoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE98B13980664EC28B42BF3 /* Pods_PuntoJaliscoUITests.framework */; };
@@ -93,7 +92,6 @@
 		DCBAF2401D82AA08003D7BB7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DCCEBA0C1D83906A0093024D /* PJMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PJMapViewController.swift; sourceTree = "<group>"; };
 		DCCEBA0E1D8391E90093024D /* PuntoJalisco-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PuntoJalisco-Bridging-Header.h"; path = "PuntoJalisco/PuntoJalisco-Bridging-Header.h"; sourceTree = "<group>"; };
-		DCD11D4F1DA0912400B1B3DB /* RouteDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteDetailTableViewController.swift; sourceTree = "<group>"; };
 		DCD39C811D8BA36300479EC2 /* PJRouteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PJRouteTableViewCell.swift; sourceTree = "<group>"; };
 		DCD39C821D8BA36300479EC2 /* PJRouteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJRouteTableViewCell.xib; sourceTree = "<group>"; };
 		DF0EDAA697D4EA0181C92684 /* Pods-PuntoJalisco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PuntoJalisco.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PuntoJalisco/Pods-PuntoJalisco.debug.xcconfig"; sourceTree = "<group>"; };
@@ -221,7 +219,6 @@
 				DCCEBA0C1D83906A0093024D /* PJMapViewController.swift */,
 				DC98D6951D8A666B009E405D /* PJRoutsViewController.swift */,
 				8BFF2CBF1D8C9EC30014672B /* PJRouteDetailViewController.swift */,
-				DCD11D4F1DA0912400B1B3DB /* RouteDetailTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -569,7 +566,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCD11D501DA0912400B1B3DB /* RouteDetailTableViewController.swift in Sources */,
 				DC5329C11DA869BF00340F1C /* HeaderView.swift in Sources */,
 				8BF981321D9977B40056254A /* PJTruckLocation.swift in Sources */,
 				8BFF2CC01D8C9EC30014672B /* PJRouteDetailViewController.swift in Sources */,

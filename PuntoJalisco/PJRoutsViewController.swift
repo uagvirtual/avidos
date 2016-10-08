@@ -19,20 +19,23 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
     var parsedResponse = ""
     var routesArray:[PJRouteObject] = []
     var routesFilteredArray:[String:[PJRouteObject]] = [:]
-    let kRouteCellIdentifier = "RouteCellIdentifier"
+    let kRouteDetailCellIdentifier = "RouteDetailCellIdentifier"
     
     let response = "[{\"base\":\"TROMPO MÁGICO\",\"primersalida\":\"5:00\",\"ultimasalida\":\"22:30\",\"duracion\":\"3\",\"nombreruta\":\"368\",\"ciudad\":\"GUADALAJARA\"},{\"base\":\"LOPEZ MATEOS\",\"primersalida\":\"5:00\",\"ultimasalida\":\"22:30\",\"duracion\":\"3\",\"nombreruta\":\"24\",\"ciudad\":\"GUADALAJARA\"},{\"base\":\"BASILIO BADILLO (TONALÁ)\",\"primersalida\":\"5:00\",\"ultimasalida\":\"22:30\",\"duracion\":\"3\",\"nombreruta\":\"368\",\"ciudad\":\"GUADALAJARA\"},{\"base\":\"ZAPOPAN\",\"primersalida\":\"5:00\",\"ultimasalida\":\"22:30\",\"duracion\":\"3\",\"nombreruta\":\"368\",\"ciudad\":\"GUADALAJARA\"}]"
     
     var devMode = false
-    @IBOutlet weak var tableView: UITableView!
+//    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UIExpandableTableView!
     @IBOutlet weak var loadingIndicatorContainer: UIView!
     @IBOutlet weak var activitiIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let routeCell = UINib(nibName: "PJRouteTableViewCell", bundle: nil)
-        tableView.registerNib(routeCell, forCellReuseIdentifier: kRouteCellIdentifier)
+        let routeCell = UINib(nibName: "PJRouteDetailTableViewCell", bundle: nil)
+        tableView.registerNib(routeCell, forCellReuseIdentifier: kRouteDetailCellIdentifier)
+        tableView.separatorColor = UIColor(red: 0, green: 85.0/255.0, blue: 117.0/255.0, alpha: 1)
+        tableView.tableFooterView = UIView()
         
         loadingIndicatorContainer.layer.cornerRadius = 10
         loadingIndicatorContainer.alpha = 0
@@ -118,6 +121,78 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     
+    // MARK: UITableViewDataSource
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 339
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return routesFilteredArray.count
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if (!routesFilteredArray.isEmpty) {
+            if (self.tableView.sectionOpen != NSNotFound && section == self.tableView.sectionOpen) {
+                var components = Array(routesFilteredArray.keys)
+                let sectionString = components[section]
+                return routesFilteredArray[sectionString]!.count
+            }
+        }
+        return 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var components = Array(routesFilteredArray.keys)
+        let sectionString = components[indexPath.section]
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(kRouteDetailCellIdentifier, forIndexPath: indexPath) as! PJRouteDetailTableViewCell
+        
+        cell.preservesSuperviewLayoutMargins = false
+        cell.separatorInset = UIEdgeInsetsZero
+        cell.layoutMargins = UIEdgeInsetsZero
+        
+        cell.route = routesFilteredArray[sectionString]![indexPath.row]
+        cell.titleLabel.text = routesFilteredArray[sectionString]![indexPath.row].base
+        cell.baseLabel.text = routesFilteredArray[sectionString]![indexPath.row].base
+        cell.firstTripLabel.text = routesFilteredArray[sectionString]![indexPath.row].firstRide
+        cell.lastTripLabel.text = routesFilteredArray[sectionString]![indexPath.row].lastRide
+        cell.durationLabel.text = routesFilteredArray[sectionString]![indexPath.row].duration
+        return cell
+    }
+    
+    // MARK: UITableViewDelegate
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = HeaderView(tableView: self.tableView, section: section)
+        headerView.backgroundColor = UIColor(red: 117.0/255.0,
+                                             green: 0/255.0,
+                                             blue: 27.0/255.0,
+                                             alpha: 1)
+        
+        var components = Array(routesFilteredArray.keys)
+        let sectionString = components[section]
+        
+        let label = UILabel(frame: headerView.frame)
+        label.text = "  Ruta \(sectionString)"
+//        label.textAlignment = NSTextAlignment.Left
+        label.font = UIFont(name: "HelveticaNeue", size: 18)
+        label.textColor = UIColor.whiteColor()
+        
+        headerView.addSubview(label)
+        
+        return headerView
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    
+    /*
     //MARK: Table View delegate methods
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -148,5 +223,5 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.backgroundColor = cellBackgroundColor
     }
     
-    
+    */
 }

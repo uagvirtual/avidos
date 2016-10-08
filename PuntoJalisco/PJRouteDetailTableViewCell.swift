@@ -15,6 +15,9 @@ class PJRouteDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var firstTripLabel: UILabel!
     @IBOutlet weak var lastTripLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    var route:PJRouteObject!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +32,8 @@ class PJRouteDetailTableViewCell: UITableViewCell {
     
     @IBAction func goToMapPressed(sender: AnyObject) {
         print("go to map pressed")
+        PJRouteManager.sharedInstance.setRoute(route)
+        
     }
     
 }

@@ -41,6 +41,11 @@ class HeaderView: UIView {
         toggleButton.backgroundColor = UIColor.clearColor()
         toggleButton.frame = CGRectMake(0, 0, self.frame.width, self.frame.height)
         self.addSubview(toggleButton)
+        
+        let separator = UIView()
+        separator.frame = CGRectMake(0, self.frame.size.height - 1, self.frame.size.width, 1)
+        separator.backgroundColor = UIColor.whiteColor()
+        self.addSubview(separator)
     }
     
     func toggle(sender:AnyObject){
