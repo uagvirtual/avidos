@@ -37,10 +37,13 @@ class PJRegisterView: UIViewController {
     var parsedResponse = ""
     var token = ""
     var timer = NSTimer()
+    var devMode = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        devMode = defaults.boolForKey(Constants.isDevMode)
+        
         datePicker.addTarget(self, action: #selector(datePickerChanged), forControlEvents: UIControlEvents.ValueChanged)
         
         loadingIndicatorContainer.layer.cornerRadius = 10
@@ -62,7 +65,11 @@ class PJRegisterView: UIViewController {
     }
     
     @IBAction func registerButtonPressed(sender: AnyObject) {
-        registerUser()
+        if devMode{
+            presentMainScreen()
+        }else{
+            registerUser()
+        }
     }
     
     @IBAction func onSwitchValueChange(sender: AnyObject) {
@@ -112,18 +119,7 @@ class PJRegisterView: UIViewController {
                     self.parsedResponse = self.rawResponse.substringWithRange(range)
                     if self.parseToken(self.parsedResponse){
                         if !self.defaults.boolForKey(Constants.isRegistred){
-                            self.hideActivityIndicator(false)
-                            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                            let viewController = mainStoryboard.instantiateViewControllerWithIdentifier("mainTabBarController") as! UITabBarController
-                            UIView.transitionFromView((UIApplication.sharedApplication().keyWindow?.rootViewController?.view)!,
-                                toView: viewController.view,
-                                duration: 0.5,
-                                options: UIViewAnimationOptions.TransitionFlipFromLeft,
-                                completion: { (finished) in
-                                    UIApplication.sharedApplication().keyWindow?.rootViewController = viewController;
-                            })
-                            self.defaults.setBool(true, forKey: Constants.isRegistred)
-                            self.defaults.synchronize()
+                            self.presentMainScreen()
                         }else{
                             self.hideActivityIndicator(true)
                         }
@@ -135,6 +131,21 @@ class PJRegisterView: UIViewController {
                     self.presentViewController(alertController, animated: true, completion: nil)
                 }
         }
+    }
+    
+    func presentMainScreen(){
+        self.hideActivityIndicator(false)
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = mainStoryboard.instantiateViewControllerWithIdentifier("mainTabBarController") as! UITabBarController
+        UIView.transitionFromView((UIApplication.sharedApplication().keyWindow?.rootViewController?.view)!,
+                                  toView: viewController.view,
+                                  duration: 0.5,
+                                  options: UIViewAnimationOptions.TransitionFlipFromLeft,
+                                  completion: { (finished) in
+                                    UIApplication.sharedApplication().keyWindow?.rootViewController = viewController;
+        })
+        self.defaults.setBool(true, forKey: Constants.isRegistred)
+        self.defaults.synchronize()
     }
     
     func parseToken(response:String) -> Bool{

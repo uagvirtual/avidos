@@ -19,6 +19,8 @@ class PJMapViewController: UIViewController, GMSMapViewDelegate {
     let locationPath = Constants.Paths.mainPath + Constants.Paths.locationPath
     var params:[String:String] = [Constants.Location.routeKey:"368", Constants.Location.latKey:"20.671628", Constants.Location.lonKey:"-103.36867"]
     
+    @IBOutlet weak var selectRouteView: UIView!
+    @IBOutlet weak var routeNameLabel: UILabel!
     @IBOutlet weak var mapView: GMSMapView!
     let locationManager = CLLocationManager()
     
@@ -27,6 +29,11 @@ class PJMapViewController: UIViewController, GMSMapViewDelegate {
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        
+        routeNameLabel.text = "Seleccionar ruta"
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(PJMapViewController.selectRoute(_:)))
+        selectRouteView.addGestureRecognizer(tap)
         
         let parsedRoutes = JSONParser().parseJSON(response)
         for eachRoute in parsedRoutes{
@@ -37,6 +44,17 @@ class PJMapViewController: UIViewController, GMSMapViewDelegate {
             marker.map = self.mapView
         }
         print(self.routesArray)
+    }
+    
+    func selectRoute(sender: UITapGestureRecognizer? = nil) {
+        tabBarController?.selectedIndex = 1
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        if let name = PJRouteManager.sharedInstance.currentRoute.routeName {
+            routeNameLabel.text = "Ruta " + name
+        }
         
     }
 

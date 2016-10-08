@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (3.5.0)
+  - ExpandableTableViewController (2.0)
   - GoogleMaps (2.0.1):
     - GoogleMaps/Maps (= 2.0.1)
   - GoogleMaps/Base (2.0.1)
@@ -9,14 +10,16 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.5)
+  - ExpandableTableViewController
   - GoogleMaps
   - IQKeyboardManagerSwift
 
 SPEC CHECKSUMS:
   Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
+  ExpandableTableViewController: 9e2f5e685784061cfe660d5f673772d79ccd9a95
   GoogleMaps: f09da64fc987c1aa29394567c3cab5a3df83c402
   IQKeyboardManagerSwift: 41fd3a45a2cdb2a0e031af697708a95b865068a1
 
-PODFILE CHECKSUM: c9a4e79af699651bf87a298e77916988dbb9605b
+PODFILE CHECKSUM: 8bbc27f14c528e5fb7927b0ac2d706430181fb26
 
 COCOAPODS: 1.0.1

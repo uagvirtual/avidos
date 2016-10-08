@@ -18,10 +18,12 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
     var params:[String:String] = [Constants.Location.cityKey:"GUADALAJARA"]
     var parsedResponse = ""
     var routesArray:[PJRouteObject] = []
+    var routesFilteredArray:[String:[PJRouteObject]] = [:]
     let kRouteCellIdentifier = "RouteCellIdentifier"
     
-    let response = "[{\"base\":\"TROMPO MÁGICO\",\"primersalida\":\"5:00\",\"ultimasalida\":\"22:30\",\"duracion\":\"3\",\"nombreruta\":\"368\",\"ciudad\":\"GUADALAJARA\"},{\"base\":\"BASILIO BADILLO (TONALÁ)\",\"primersalida\":\"5:00\",\"ultimasalida\":\"22:30\",\"duracion\":\"3\",\"nombreruta\":\"368\",\"ciudad\":\"GUADALAJARA\"}]"
+    let response = "[{\"base\":\"TROMPO MÁGICO\",\"primersalida\":\"5:00\",\"ultimasalida\":\"22:30\",\"duracion\":\"3\",\"nombreruta\":\"368\",\"ciudad\":\"GUADALAJARA\"},{\"base\":\"LOPEZ MATEOS\",\"primersalida\":\"5:00\",\"ultimasalida\":\"22:30\",\"duracion\":\"3\",\"nombreruta\":\"24\",\"ciudad\":\"GUADALAJARA\"},{\"base\":\"BASILIO BADILLO (TONALÁ)\",\"primersalida\":\"5:00\",\"ultimasalida\":\"22:30\",\"duracion\":\"3\",\"nombreruta\":\"368\",\"ciudad\":\"GUADALAJARA\"},{\"base\":\"ZAPOPAN\",\"primersalida\":\"5:00\",\"ultimasalida\":\"22:30\",\"duracion\":\"3\",\"nombreruta\":\"368\",\"ciudad\":\"GUADALAJARA\"}]"
     
+    var devMode = false
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingIndicatorContainer: UIView!
     @IBOutlet weak var activitiIndicator: UIActivityIndicatorView!
@@ -43,7 +45,21 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
             let route = PJRouteObject.init(route: eachRoute as! [String : String])
             self.routesArray.append(route)
         }
+        print("routesArray")
         print(self.routesArray)
+        
+        for eachObject in self.routesArray{
+            let name = eachObject.routeName!
+            if let _ = routesFilteredArray[name]{
+                routesFilteredArray[name]?.append(eachObject)
+            }else{
+                routesFilteredArray[name] = [eachObject]
+            }
+        }
+        
+        print("routesFiteredArray")
+        print(routesFilteredArray)
+        
         self.tableView.reloadData()
         self.hideActivityIndicator()
     }
@@ -58,11 +74,21 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
         getLocation()
     }
 
+    func showActivityIndicator(){
+        activitiIndicator.startAnimating()
+        UIView.animateWithDuration(0.3, animations: {
+            self.loadingIndicatorContainer.alpha = 1
+            }, completion: nil)
+    }
+    
+    func hideActivityIndicator(){
+        activitiIndicator.stopAnimating()
+        UIView.animateWithDuration(0.3, animations: {
+            self.loadingIndicatorContainer.alpha = 0
+        }) { (completed) in }
+    }
+    
     func getLocation(){
-        if routesArray.count > 0{
-            routesArray.removeAll()
-        }
-        
         showActivityIndicator()
         print("[ROUTES] - getLocation started")
         Alamofire.request(.GET, locationPath, parameters:params)
@@ -70,7 +96,10 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
             .responseString { response in
                 print("Success: \(response.result.isSuccess)")
                 if response.result.isSuccess{
-                    //print(response.result.debugDescription)
+                    if self.routesArray.count > 0{
+                        self.routesArray.removeAll()
+                    }
+                    
                     let parsedRoutes = JSONParser().parseJSON(response.result.debugDescription)
                     for eachRoute in parsedRoutes{
                         let route = PJRouteObject.init(route: eachRoute as! [String : String])
@@ -88,6 +117,8 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    
+    //MARK: Table View delegate methods
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -117,17 +148,5 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.backgroundColor = cellBackgroundColor
     }
     
-    func showActivityIndicator(){
-        activitiIndicator.startAnimating()
-        UIView.animateWithDuration(0.3, animations: {
-            self.loadingIndicatorContainer.alpha = 1
-            }, completion: nil)
-    }
     
-    func hideActivityIndicator(){
-        activitiIndicator.stopAnimating()
-        UIView.animateWithDuration(0.3, animations: {
-            self.loadingIndicatorContainer.alpha = 0
-        }) { (completed) in }
-    }
 }

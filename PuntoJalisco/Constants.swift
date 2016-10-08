@@ -44,4 +44,5 @@ class Constants: NSObject {
     
     static let tokenKey = "token"
     static let isRegistred = "isRegistred"
+    static let isDevMode = "isDevMode"
 }

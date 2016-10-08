@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -325,6 +325,9 @@
                                         <state key="normal" title="Ver en el Mapa">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="viewMapPressed:" destination="WJm-QR-NvP" eventType="touchUpInside" id="BVg-M2-CIp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -352,6 +355,14 @@
                                     <constraint firstItem="wag-fP-okQ" firstAttribute="top" secondItem="Kba-0J-P7m" secondAttribute="top" id="zYP-te-8eh"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vos-QW-ISE" customClass="UIExpandableTableView" customModule="PuntoJalisco" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="113" width="600" height="438"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="WJm-QR-NvP" id="D4J-6s-4XS"/>
+                                    <outlet property="delegate" destination="WJm-QR-NvP" id="8gV-9r-qod"/>
+                                </connections>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQu-EH-Mfm">
                                 <rect key="frame" x="20" y="52" width="30" height="30"/>
                                 <constraints>
@@ -367,6 +378,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vdr-Sa-Cd0" firstAttribute="top" secondItem="H1E-h0-OEH" secondAttribute="top" id="2mk-FU-MQV"/>
+                            <constraint firstItem="Vos-QW-ISE" firstAttribute="leading" secondItem="H1E-h0-OEH" secondAttribute="leading" id="5Tb-F1-mBj"/>
                             <constraint firstItem="g95-0h-3Lr" firstAttribute="top" secondItem="vdr-Sa-Cd0" secondAttribute="bottom" id="83J-OG-wOy"/>
                             <constraint firstItem="Kba-0J-P7m" firstAttribute="top" secondItem="cpc-gg-pUQ" secondAttribute="bottom" constant="10" id="Ctv-xQ-kWL"/>
                             <constraint firstItem="g95-0h-3Lr" firstAttribute="top" secondItem="vdr-Sa-Cd0" secondAttribute="bottom" id="Cww-Nc-L02"/>
@@ -374,14 +386,17 @@
                             <constraint firstItem="cpc-gg-pUQ" firstAttribute="centerX" secondItem="H1E-h0-OEH" secondAttribute="centerX" id="Iao-u9-Pau"/>
                             <constraint firstItem="cpc-gg-pUQ" firstAttribute="width" secondItem="H1E-h0-OEH" secondAttribute="width" multiplier="0.33" id="L3R-bz-LNi"/>
                             <constraint firstItem="cpc-gg-pUQ" firstAttribute="width" secondItem="cpc-gg-pUQ" secondAttribute="height" multiplier="198:73" id="LCh-1V-Xk6"/>
+                            <constraint firstAttribute="trailing" secondItem="Vos-QW-ISE" secondAttribute="trailing" id="Qx7-q6-m5E"/>
                             <constraint firstAttribute="trailing" secondItem="vdr-Sa-Cd0" secondAttribute="trailing" id="RvD-uN-ofw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vdr-Sa-Cd0" secondAttribute="trailing" constant="-20" id="ddf-zL-Zft"/>
                             <constraint firstItem="vdr-Sa-Cd0" firstAttribute="top" secondItem="H1E-h0-OEH" secondAttribute="topMargin" id="eg4-zc-IHq"/>
                             <constraint firstItem="sQu-EH-Mfm" firstAttribute="leading" secondItem="H1E-h0-OEH" secondAttribute="leadingMargin" id="ejv-x8-3qd"/>
                             <constraint firstItem="cpc-gg-pUQ" firstAttribute="top" secondItem="Ouo-iQ-KPT" secondAttribute="bottom" constant="10" id="g9W-xZ-8Qt"/>
+                            <constraint firstItem="Vos-QW-ISE" firstAttribute="top" secondItem="cpc-gg-pUQ" secondAttribute="bottom" constant="10" id="hYw-PP-04q"/>
                             <constraint firstItem="g95-0h-3Lr" firstAttribute="top" secondItem="Kba-0J-P7m" secondAttribute="bottom" id="ifY-a9-oGh"/>
                             <constraint firstItem="vdr-Sa-Cd0" firstAttribute="leading" secondItem="H1E-h0-OEH" secondAttribute="leadingMargin" constant="-20" id="oRh-nb-Crg"/>
                             <constraint firstItem="Kba-0J-P7m" firstAttribute="leading" secondItem="H1E-h0-OEH" secondAttribute="leading" id="rf1-eF-Ku8"/>
+                            <constraint firstItem="g95-0h-3Lr" firstAttribute="top" secondItem="Vos-QW-ISE" secondAttribute="bottom" id="uVl-jM-3wr"/>
                             <constraint firstItem="cpc-gg-pUQ" firstAttribute="centerY" secondItem="sQu-EH-Mfm" secondAttribute="centerY" id="urV-Fe-NGD"/>
                             <constraint firstItem="vdr-Sa-Cd0" firstAttribute="leading" secondItem="H1E-h0-OEH" secondAttribute="leading" id="x8X-XD-nRH"/>
                         </constraints>
@@ -401,11 +416,43 @@
                         <outlet property="firstTripLabel" destination="dR4-Gs-DsF" id="49X-vV-o3q"/>
                         <outlet property="lastLabelTrip" destination="5AQ-qU-7gn" id="zr4-fF-jvU"/>
                         <outlet property="routeNameLabel" destination="fyJ-XV-k00" id="gcm-3D-3X6"/>
+                        <outlet property="tableView" destination="Vos-QW-ISE" id="Ezh-6Q-Pkg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdU-Ac-Kjf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2179" y="266"/>
+        </scene>
+        <!--Route Detail Table View Controller-->
+        <scene sceneID="R4W-44-4nw">
+            <objects>
+                <tableViewController id="g4y-BH-J5v" customClass="RouteDetailTableViewController" customModule="PuntoJalisco" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CVq-od-XmY" customClass="ExpandableTableView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LLQ-Q3-cX8">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LLQ-Q3-cX8" id="YYA-0V-6T3">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="g4y-BH-J5v" id="drL-h1-gs1"/>
+                            <outlet property="delegate" destination="g4y-BH-J5v" id="i7s-1U-mYy"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="expandableTableView" destination="CVq-od-XmY" id="wiv-3b-mXi"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ZW-zk-DQL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2910" y="266"/>
         </scene>
         <!--Register View-->
         <scene sceneID="fc6-SY-Wpb">
@@ -789,7 +836,7 @@
                         <outlet property="activitiIndicator" destination="sB7-C5-wBc" id="KAd-Nb-ceb"/>
                         <outlet property="loadingIndicatorContainer" destination="UIk-sR-idR" id="QeM-6R-TV6"/>
                         <outlet property="tableView" destination="urv-1m-EYt" id="Fxq-t6-blp"/>
-                        <segue destination="WJm-QR-NvP" kind="show" identifier="toRouteDetail" id="6gN-GY-Faj"/>
+                        <segue destination="WJm-QR-NvP" kind="show" identifier="toRouteDetail" id="bzU-mY-KLB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWf-Ef-gFP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -829,12 +876,21 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="aqf-Nb-dzv">
+                                                <rect key="frame" x="567" y="2" width="25" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="25" id="9Os-c7-fig"/>
+                                                    <constraint firstAttribute="height" constant="25" id="J23-Aj-izd"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.45882352941176469" green="0.0" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="fIR-Ms-UfR" firstAttribute="leading" secondItem="Xx1-ou-CG0" secondAttribute="leading" constant="15" id="Ke3-0E-q09"/>
                                             <constraint firstAttribute="height" constant="30" id="R7B-oU-iLw"/>
                                             <constraint firstItem="fIR-Ms-UfR" firstAttribute="centerY" secondItem="Xx1-ou-CG0" secondAttribute="centerY" id="UWA-8W-52n"/>
+                                            <constraint firstAttribute="trailing" secondItem="aqf-Nb-dzv" secondAttribute="trailing" constant="8" id="ZPE-Np-1ZS"/>
+                                            <constraint firstItem="aqf-Nb-dzv" firstAttribute="centerY" secondItem="Xx1-ou-CG0" secondAttribute="centerY" id="sCb-u0-s5Y"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6YJ-Qf-Ccv" customClass="GMSMapView">
@@ -872,6 +928,8 @@
                     <navigationItem key="navigationItem" id="T1H-lK-eoi"/>
                     <connections>
                         <outlet property="mapView" destination="6YJ-Qf-Ccv" id="pOd-Gf-Rqn"/>
+                        <outlet property="routeNameLabel" destination="fIR-Ms-UfR" id="UQg-vv-CrI"/>
+                        <outlet property="selectRouteView" destination="Xx1-ou-CG0" id="waL-qW-ewN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3E6-Or-DZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -904,6 +962,7 @@
         <image name="bus" width="25" height="25"/>
         <image name="clock-green" width="276" height="276"/>
         <image name="clock-red" width="276" height="276"/>
+        <image name="down-arrow" width="170" height="170"/>
         <image name="home" width="275" height="275"/>
         <image name="logo_punto_jalisco" width="472" height="175"/>
         <image name="loop" width="290" height="290"/>
