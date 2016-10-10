@@ -73,6 +73,10 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(true)
+        tableView.headerViewClose(self.tableView.sectionOpen)
+    }
     
     @IBAction func refreshButtonPressed(sender: AnyObject) {
         getLocation()
@@ -160,6 +164,7 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsetsZero
         cell.layoutMargins = UIEdgeInsetsZero
+        cell.selectionStyle = .None
         
         cell.route = routesFilteredArray[sectionString]![indexPath.row]
         cell.titleLabel.text = routesFilteredArray[sectionString]![indexPath.row].base
