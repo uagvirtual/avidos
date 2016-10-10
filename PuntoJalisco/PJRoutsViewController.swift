@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ViewMapButtonDelegate {
 
     let locationPath = Constants.Paths.mainPath + Constants.Paths.routesPath
     let cellBackgroundColor = UIColor(red: 117.0/255.0, green: 0, blue: 27.0/255.0, alpha: 1)
@@ -22,6 +22,7 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
     let kRouteDetailCellIdentifier = "RouteDetailCellIdentifier"
     
     let response = "[{\"base\":\"TROMPO MÁGICO\",\"primersalida\":\"5:00\",\"ultimasalida\":\"22:30\",\"duracion\":\"3\",\"nombreruta\":\"368\",\"ciudad\":\"GUADALAJARA\"},{\"base\":\"LOPEZ MATEOS\",\"primersalida\":\"5:00\",\"ultimasalida\":\"22:30\",\"duracion\":\"3\",\"nombreruta\":\"24\",\"ciudad\":\"GUADALAJARA\"},{\"base\":\"BASILIO BADILLO (TONALÁ)\",\"primersalida\":\"5:00\",\"ultimasalida\":\"22:30\",\"duracion\":\"3\",\"nombreruta\":\"368\",\"ciudad\":\"GUADALAJARA\"},{\"base\":\"ZAPOPAN\",\"primersalida\":\"5:00\",\"ultimasalida\":\"22:30\",\"duracion\":\"3\",\"nombreruta\":\"368\",\"ciudad\":\"GUADALAJARA\"}]"
+    
     
     var devMode = false
 //    @IBOutlet weak var tableView: UITableView!
@@ -120,6 +121,9 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    func goToViewMap() {
+        tabBarController?.selectedIndex = 0
+    }
     
     // MARK: UITableViewDataSource
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -152,6 +156,7 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let cell = tableView.dequeueReusableCellWithIdentifier(kRouteDetailCellIdentifier, forIndexPath: indexPath) as! PJRouteDetailTableViewCell
         
+        cell.delegate = self
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsetsZero
         cell.layoutMargins = UIEdgeInsetsZero

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ViewMapButtonDelegate{
+    func goToViewMap()
+}
+
 class PJRouteDetailTableViewCell: UITableViewCell {
 
     
@@ -18,6 +22,7 @@ class PJRouteDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
     var route:PJRouteObject!
+    var delegate:ViewMapButtonDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,7 +38,7 @@ class PJRouteDetailTableViewCell: UITableViewCell {
     @IBAction func goToMapPressed(sender: AnyObject) {
         print("go to map pressed")
         PJRouteManager.sharedInstance.setRoute(route)
-        
+        delegate?.goToViewMap()
     }
     
 }
