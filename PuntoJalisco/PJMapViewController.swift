@@ -23,9 +23,12 @@ class PJMapViewController: UIViewController, GMSMapViewDelegate {
     @IBOutlet weak var routeNameLabel: UILabel!
     @IBOutlet weak var mapView: GMSMapView!
     let locationManager = CLLocationManager()
+    var timer:NSTimer = NSTimer()
+    var devMode = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        devMode = NSUserDefaults.standardUserDefaults().boolForKey(Constants.isDevMode)
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -34,16 +37,6 @@ class PJMapViewController: UIViewController, GMSMapViewDelegate {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(PJMapViewController.selectRoute(_:)))
         selectRouteView.addGestureRecognizer(tap)
-        
-        let parsedRoutes = JSONParser().parseJSON(response)
-        for eachRoute in parsedRoutes{
-            let route = PJRouteObject.init(route: eachRoute as! [String : String])
-            self.routesArray.append(route)
-            let marker = PJLocationMarker(route: route)
-            self.markersArray.append(marker)
-            marker.map = self.mapView
-        }
-        print(self.routesArray)
     }
     
     func selectRoute(sender: UITapGestureRecognizer? = nil) {
@@ -54,8 +47,16 @@ class PJMapViewController: UIViewController, GMSMapViewDelegate {
         super.viewDidAppear(true)
         if let name = PJRouteManager.sharedInstance.currentRoute.routeName {
             routeNameLabel.text = "Ruta " + name
+            self.mapView.clear()
+            getLocation()
+            timer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: #selector(getLocation), userInfo: nil, repeats: true)
         }
         
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(true)
+        timer.invalidate()
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,20 +68,47 @@ class PJMapViewController: UIViewController, GMSMapViewDelegate {
         if routesArray.count > 0{
             routesArray.removeAll()
         }
-                
-        print("[ROUTES] - getLocation started")
-        Alamofire.request(.GET, locationPath, parameters:params)
-            .validate()
-            .responseString { response in
-                print("Success: \(response.result.isSuccess)")
-                //print(response.result.debugDescription)
-                let parsedRoutes = JSONParser().parseJSON(response.result.debugDescription)
-                for eachRoute in parsedRoutes{
-                    let route = PJRouteObject.init(route: eachRoute as! [String : String])
-                    self.routesArray.append(route)
-                }
-                print(self.routesArray)
+        
+        if !devMode {
+            print("[ROUTES] - getLocation started")
+            Alamofire.request(.GET, locationPath, parameters:params)
+                .validate()
+                .responseString { response in
+                    print("Success: \(response.result.isSuccess)")
+                    //print(response.result.debugDescription)
+                    let parsedRoutes = JSONParser().parseJSON(response.result.debugDescription)
+                    for eachRoute in parsedRoutes{
+                        let route = PJRouteObject.init(route: eachRoute as! [String : String])
+                        self.routesArray.append(route)
+                        let marker = PJLocationMarker(route: route)
+                        self.markersArray.append(marker)
+                        marker.map = self.mapView
+                    }
+                    print(self.routesArray)
+                    self.updateMapWithMarkers()
+            }
+        }else{
+            let parsedRoutes = JSONParser().parseJSON(response)
+            for eachRoute in parsedRoutes{
+                let route = PJRouteObject.init(route: eachRoute as! [String : String])
+                self.routesArray.append(route)
+                let marker = PJLocationMarker(route: route)
+                self.markersArray.append(marker)
+                marker.map = self.mapView
+            }
+            print(self.routesArray)
+            updateMapWithMarkers()
         }
+    }
+    
+    func updateMapWithMarkers(){
+        path.removeAllCoordinates()
+        for marker in markersArray{
+            path.addCoordinate(marker.position)
+        }
+        let bounds:GMSCoordinateBounds = GMSCoordinateBounds.init(path: path)
+        let update:GMSCameraUpdate = GMSCameraUpdate.fitBounds(bounds, withPadding: 40.0)
+        mapView.moveCamera(update)
     }
 
     /*
@@ -116,12 +144,6 @@ extension PJMapViewController: CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
         }
         
-        path.removeAllCoordinates()
-        for marker in markersArray{
-            path.addCoordinate(marker.position)
-        }
-        let bounds:GMSCoordinateBounds = GMSCoordinateBounds.init(path: path)
-        let update:GMSCameraUpdate = GMSCameraUpdate.fitBounds(bounds, withPadding: 40.0)
-        mapView.moveCamera(update)
+        updateMapWithMarkers()
     }
 }

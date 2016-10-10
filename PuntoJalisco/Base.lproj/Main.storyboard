@@ -540,16 +540,16 @@
                                 <rect key="frame" x="0.0" y="113" width="600" height="438"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xx1-ou-CG0">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ruta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIR-Ms-UfR">
-                                                <rect key="frame" x="15" y="4" width="36" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="10" y="10" width="38" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="aqf-Nb-dzv">
-                                                <rect key="frame" x="567" y="2" width="25" height="25"/>
+                                                <rect key="frame" x="567" y="7" width="25" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="25" id="9Os-c7-fig"/>
                                                     <constraint firstAttribute="height" constant="25" id="J23-Aj-izd"/>
@@ -558,15 +558,15 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.45882352941176469" green="0.0" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="fIR-Ms-UfR" firstAttribute="leading" secondItem="Xx1-ou-CG0" secondAttribute="leading" constant="15" id="Ke3-0E-q09"/>
-                                            <constraint firstAttribute="height" constant="30" id="R7B-oU-iLw"/>
+                                            <constraint firstItem="fIR-Ms-UfR" firstAttribute="leading" secondItem="Xx1-ou-CG0" secondAttribute="leading" constant="10" id="Ke3-0E-q09"/>
+                                            <constraint firstAttribute="height" constant="40" id="R7B-oU-iLw"/>
                                             <constraint firstItem="fIR-Ms-UfR" firstAttribute="centerY" secondItem="Xx1-ou-CG0" secondAttribute="centerY" id="UWA-8W-52n"/>
                                             <constraint firstAttribute="trailing" secondItem="aqf-Nb-dzv" secondAttribute="trailing" constant="8" id="ZPE-Np-1ZS"/>
                                             <constraint firstItem="aqf-Nb-dzv" firstAttribute="centerY" secondItem="Xx1-ou-CG0" secondAttribute="centerY" id="sCb-u0-s5Y"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6YJ-Qf-Ccv" customClass="GMSMapView">
-                                        <rect key="frame" x="0.0" y="30" width="600" height="408"/>
+                                        <rect key="frame" x="0.0" y="40" width="600" height="398"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>

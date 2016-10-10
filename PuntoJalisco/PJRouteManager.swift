@@ -41,4 +41,5 @@ class PJRouteManager {
     func displayCurrentRoute(){
         print("\n---> [ROUTE MANAGER] Current Route\nBase: \(currentRoute.base)\nPrimer Salida: \(currentRoute.firstRide)\nUltimaSalid: \(currentRoute.lastRide)\nDuracion: \(currentRoute.duration)\nNombre: \(currentRoute.routeName)\nCiudad: \(currentRoute.city)\n----\nHora: \(currentRoute.hour)\nId Hardware: \(currentRoute.id)\nLat: \(currentRoute.lat)\nLon: \(currentRoute.lon)\nRuta: \(currentRoute.routeNumber)\nFecha Log: \(currentRoute.date)\nSaturacion: \(currentRoute.saturation)\nDistancia: \(currentRoute.distance)\nNumero de Camion: \(currentRoute.truckNumber)\n")
     }
+        
 }
