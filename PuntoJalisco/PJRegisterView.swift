@@ -126,7 +126,7 @@ class PJRegisterView: UIViewController {
                     }
                 }else{
                     self.hideActivityIndicator(false)
-                    let alertController = UIAlertController(title: "Atención", message:"Ha ocurrido un error, por favor intentalo mas tarde.", preferredStyle: UIAlertControllerStyle.Alert)
+                    let alertController = UIAlertController(title: "Atención", message:"Ha ocurrido un error de conexión, por favor intentalo mas tarde.", preferredStyle: UIAlertControllerStyle.Alert)
                     alertController.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default,handler: nil))
                     self.presentViewController(alertController, animated: true, completion: nil)
                 }

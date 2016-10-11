@@ -33,6 +33,8 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        devMode = NSUserDefaults.standardUserDefaults().boolForKey(Constants.isDevMode)
+        
         let routeCell = UINib(nibName: "PJRouteDetailTableViewCell", bundle: nil)
         tableView.registerNib(routeCell, forCellReuseIdentifier: kRouteDetailCellIdentifier)
         tableView.separatorColor = UIColor(red: 0, green: 85.0/255.0, blue: 117.0/255.0, alpha: 1)
@@ -41,31 +43,34 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
         loadingIndicatorContainer.layer.cornerRadius = 10
         loadingIndicatorContainer.alpha = 0
         
-//        getLocation()
         
-        //Dev mode
-        let parsedRoutes = JSONParser().parseJSON(response)
-        for eachRoute in parsedRoutes{
-            let route = PJRouteObject.init(route: eachRoute as! [String : String])
-            self.routesArray.append(route)
-        }
-        print("routesArray")
-        print(self.routesArray)
-        
-        for eachObject in self.routesArray{
-            let name = eachObject.routeName!
-            if let _ = routesFilteredArray[name]{
-                routesFilteredArray[name]?.append(eachObject)
-            }else{
-                routesFilteredArray[name] = [eachObject]
+        if !devMode {
+            getLocation()
+        }else{
+            //Dev mode
+            let parsedRoutes = JSONParser().parseJSON(response)
+            for eachRoute in parsedRoutes{
+                let route = PJRouteObject.init(route: eachRoute as! [String : String])
+                self.routesArray.append(route)
             }
+            print("routesArray")
+            print(self.routesArray)
+            
+            for eachObject in self.routesArray{
+                let name = eachObject.routeName!
+                if let _ = routesFilteredArray[name]{
+                    routesFilteredArray[name]?.append(eachObject)
+                }else{
+                    routesFilteredArray[name] = [eachObject]
+                }
+            }
+            
+            print("routesFiteredArray")
+            print(routesFilteredArray)
+            
+            self.tableView.reloadData()
+            self.hideActivityIndicator()
         }
-        
-        print("routesFiteredArray")
-        print(routesFilteredArray)
-        
-        self.tableView.reloadData()
-        self.hideActivityIndicator()
     }
 
     override func didReceiveMemoryWarning() {
@@ -114,11 +119,21 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
                         self.routesArray.append(route)
                     }
                     print(self.routesArray)
+                    
+                    for eachObject in self.routesArray{
+                        let name = eachObject.routeName!
+                        if let _ = self.routesFilteredArray[name]{
+                            self.routesFilteredArray[name]?.append(eachObject)
+                        }else{
+                            self.routesFilteredArray[name] = [eachObject]
+                        }
+                    }
+                    
                     self.tableView.reloadData()
                     self.hideActivityIndicator()
                 }else{
                     self.hideActivityIndicator()
-                    let alertController = UIAlertController(title: "Atención", message:"Ha ocurrido un error, por favor intentalo mas tarde.", preferredStyle: UIAlertControllerStyle.Alert)
+                    let alertController = UIAlertController(title: "Atención", message:"Ha ocurrido un error de conexión, por favor intentalo mas tarde.", preferredStyle: UIAlertControllerStyle.Alert)
                     alertController.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default,handler: nil))
                     self.presentViewController(alertController, animated: true, completion: nil)
                 }

@@ -17,7 +17,8 @@ class PJMapViewController: UIViewController, GMSMapViewDelegate {
     var path:GMSMutablePath = GMSMutablePath()
     
     let locationPath = Constants.Paths.mainPath + Constants.Paths.locationPath
-    var params:[String:String] = [Constants.Location.routeKey:"368", Constants.Location.latKey:"20.671628", Constants.Location.lonKey:"-103.36867"]
+//    var params:[String:String] = [Constants.Location.routeKey:"368", Constants.Location.latKey:"20.671628", Constants.Location.lonKey:"-103.36867"]
+    var params:[String:String] = [:]
     
     @IBOutlet weak var selectRouteView: UIView!
     @IBOutlet weak var routeNameLabel: UILabel!
@@ -46,6 +47,7 @@ class PJMapViewController: UIViewController, GMSMapViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         if let name = PJRouteManager.sharedInstance.currentRoute.routeName {
+            params[Constants.Location.routeKey] = name
             routeNameLabel.text = "Ruta " + name
             self.mapView.clear()
             getLocation()
@@ -70,6 +72,8 @@ class PJMapViewController: UIViewController, GMSMapViewDelegate {
         }
         
         if !devMode {
+            print("params: \(params)")
+            self.mapView.clear()
             print("[ROUTES] - getLocation started")
             Alamofire.request(.GET, locationPath, parameters:params)
                 .validate()
@@ -142,6 +146,9 @@ extension PJMapViewController: CLLocationManagerDelegate {
             mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
             path.addCoordinate(location.coordinate)
             locationManager.stopUpdatingLocation()
+            
+            params[Constants.Location.latKey] = String(location.coordinate.latitude)
+            params[Constants.Location.lonKey] = String(location.coordinate.longitude)
         }
         
         updateMapWithMarkers()

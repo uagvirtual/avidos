@@ -446,7 +446,7 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="urv-1m-EYt" customClass="UIExpandableTableView" customModule="PuntoJalisco" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="113" width="600" height="438"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="kO4-Ul-fJp" id="RaE-ST-w4h"/>
                                     <outlet property="delegate" destination="kO4-Ul-fJp" id="gAm-p5-0Zt"/>
