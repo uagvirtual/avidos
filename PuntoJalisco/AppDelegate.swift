@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         PJRouteManager.sharedInstance        
         
-        self.defaults.setBool(true, forKey: Constants.isDevMode)
+        self.defaults.setBool(false, forKey: Constants.isDevMode)
         self.defaults.synchronize()
         return true
     }
