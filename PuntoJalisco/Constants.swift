@@ -10,36 +10,36 @@ import UIKit
 
 class Constants: NSObject {
     struct Register {
-        static let emailKey = "EMAIL"
-        static let nameKey = "NOMBRECOMPLETO"
-        static let birthDateKey = "FECHA_NAC"
-        static let genderKey = "GENERO"
+        static let emailKey = "email"
+        static let nameKey = "nombre"
+        static let birthDateKey = "fechaNac"
+        static let genderKey = "genero"
     }
     
     struct Location {
-        static let routeKey = "RUTA"
-        static let latKey = "LAT"
-        static let lonKey = "LNG"
+        static let routeKey = "ruta"
+        static let latKey = "latitud"
+        static let lonKey = "longitud"
         static let hourKey = "HORA"
-        static let idHardwareKey = "IDHARDWARE"
-        static let dateKey = "FECHALOG"
-        static let saturationKey = "SATURACION"
-        static let distanceKey = "DISTANCIA"
-        static let truckNumberKey = "NUMCAMION"
+        static let idHardwareKey = "idHardware"
+        static let dateKey = "hora"
+        static let saturationKey = "saturacion"
+        static let distanceKey = "distancia"
+        static let truckNumberKey = "idCamion"
         static let baseKey = "base"
-        static let firstRideKey = "primersalida"
-        static let lastRideKey = "ultimasalida"
+        static let firstRideKey = "primerSalida"
+        static let lastRideKey = "ultimaSalida"
         static let durationKey = "duracion"
-        static let routeNameKey = "nombreruta"
+        static let routeNameKey = "numeroRuta"
         static let cityKey = "ciudad"
         
     }
     
     struct Paths {
-        static let mainPath = "http://192.99.41.203:99"
-        static let registerPath = "/ws_REGISTRO_APP.ASPX"
-        static let locationPath = "/ws_posiciones.aspx"
-        static let routesPath = "/ws_rutas.aspx"
+        static let mainPath = "http://weon.socialideas.mx/webservices"
+        static let registerPath = "/encuesta/"
+        static let locationPath = "/online/"
+        static let routesPath = "/rutas/"
     }
     
     static let tokenKey = "token"

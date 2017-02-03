@@ -113,6 +113,7 @@ class PJRegisterView: UIViewController {
             .validate()
             .responseString { response in
                 print("Success: \(response.result.isSuccess)")
+                print("URL: \(response.request?.URLString)")
                 if response.result.isSuccess{
                     self.rawResponse = response.result.value!
                     let range = self.rawResponse.startIndex.advancedBy(0)..<self.rawResponse.startIndex.advancedBy(44)

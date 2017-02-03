@@ -79,7 +79,7 @@ class PJMapViewController: UIViewController, GMSMapViewDelegate {
                 .validate()
                 .responseString { response in
                     print("Success: \(response.result.isSuccess)")
-                    //print(response.result.debugDescription)
+                    print(response.result.debugDescription)
                     let parsedRoutes = JSONParser().parseJSON(response.result.debugDescription)
                     for eachRoute in parsedRoutes{
                         let route = PJRouteObject.init(route: eachRoute as! [String : String])

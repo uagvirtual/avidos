@@ -34,7 +34,7 @@ class PJRouteDetailViewController: UIViewController, UITableViewDelegate, UITabl
         durationLabel.text = currentTrip.duration! + " hrs"
         routeNameLabel.text = "Ruta " + currentTrip.routeName!
                 
-        let routeCell = UINib(nibName: "PJRouteTableViewCell", bundle: nil)
+        _ = UINib(nibName: "PJRouteTableViewCell", bundle: nil)
     
         
         let routeDetailCell = UINib(nibName: "PJRouteDetailTableViewCell", bundle: nil)

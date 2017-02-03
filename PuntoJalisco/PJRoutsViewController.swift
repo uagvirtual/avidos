@@ -15,7 +15,7 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
     let cellBackgroundColor = UIColor(red: 117.0/255.0, green: 0, blue: 27.0/255.0, alpha: 1)
     
 //    var params:[String:String] = [Constants.Location.routeKey:"368", Constants.Location.latKey:"20.6716283647243", Constants.Location.lonKey:"-103.368670"]
-    var params:[String:String] = [Constants.Location.cityKey:"GUADALAJARA"]
+    var params:[String:String] = [Constants.Location.cityKey:"guadalajara"]
     var parsedResponse = ""
     var routesArray:[PJRouteObject] = []
     var routesFilteredArray:[String:[PJRouteObject]] = [:]
@@ -114,8 +114,10 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
                     }
                     
                     let parsedRoutes = JSONParser().parseJSON(response.result.debugDescription)
+                    print("\(parsedRoutes)")
                     for eachRoute in parsedRoutes{
                         let route = PJRouteObject.init(route: eachRoute as! [String : String])
+                        route.printDebug()
                         self.routesArray.append(route)
                     }
                     print(self.routesArray)
