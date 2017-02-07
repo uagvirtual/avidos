@@ -57,6 +57,7 @@ class PJRouteDetailViewController: UIViewController, UITableViewDelegate, UITabl
     
 
     @IBAction func backButtonPressed(_ sender: AnyObject) {
+//        self.navigationController?.popViewController(animated: true)
         self.navigationController?.popViewController(animated: true)
     }
     

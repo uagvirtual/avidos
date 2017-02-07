@@ -13,7 +13,7 @@ class PJRouteManager {
     
     var currentRoute:PJRouteObject!
     
-    fileprivate init() {
+    private init() {
         print(#function)
         currentRoute = PJRouteObject()
     }
