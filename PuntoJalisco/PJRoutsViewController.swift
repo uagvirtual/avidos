@@ -33,10 +33,10 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        devMode = NSUserDefaults.standardUserDefaults().boolForKey(Constants.isDevMode)
+        devMode = UserDefaults.standard.bool(forKey: Constants.isDevMode)
         
         let routeCell = UINib(nibName: "PJRouteDetailTableViewCell", bundle: nil)
-        tableView.registerNib(routeCell, forCellReuseIdentifier: kRouteDetailCellIdentifier)
+        tableView.register(routeCell, forCellReuseIdentifier: kRouteDetailCellIdentifier)
         tableView.separatorColor = UIColor(red: 0, green: 85.0/255.0, blue: 117.0/255.0, alpha: 1)
         tableView.tableFooterView = UIView()
         
@@ -78,33 +78,33 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
         tableView.headerViewClose(self.tableView.sectionOpen)
     }
     
-    @IBAction func refreshButtonPressed(sender: AnyObject) {
+    @IBAction func refreshButtonPressed(_ sender: AnyObject) {
         getLocation()
     }
 
     func showActivityIndicator(){
         activitiIndicator.startAnimating()
-        UIView.animateWithDuration(0.3, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.loadingIndicatorContainer.alpha = 1
             }, completion: nil)
     }
     
     func hideActivityIndicator(){
         activitiIndicator.stopAnimating()
-        UIView.animateWithDuration(0.3, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.loadingIndicatorContainer.alpha = 0
-        }) { (completed) in }
+        }, completion: { (completed) in }) 
     }
     
     func getLocation(){
         showActivityIndicator()
         print("[ROUTES] - getLocation started")
-        Alamofire.request(.GET, locationPath, parameters:params)
+        Alamofire.request(locationPath, parameters:params)
             .validate()
             .responseString { response in
                 print("Success: \(response.result.isSuccess)")
@@ -135,9 +135,9 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
                     self.hideActivityIndicator()
                 }else{
                     self.hideActivityIndicator()
-                    let alertController = UIAlertController(title: "Atención", message:"Ha ocurrido un error de conexión, por favor intentalo mas tarde.", preferredStyle: UIAlertControllerStyle.Alert)
-                    alertController.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default,handler: nil))
-                    self.presentViewController(alertController, animated: true, completion: nil)
+                    let alertController = UIAlertController(title: "Atención", message:"Ha ocurrido un error de conexión, por favor intentalo mas tarde.", preferredStyle: UIAlertControllerStyle.alert)
+                    alertController.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.default,handler: nil))
+                    self.present(alertController, animated: true, completion: nil)
                 }
         }
     }
@@ -147,19 +147,19 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     // MARK: UITableViewDataSource
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 339
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return routesFilteredArray.count
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if (!routesFilteredArray.isEmpty) {
             if (self.tableView.sectionOpen != NSNotFound && section == self.tableView.sectionOpen) {
@@ -171,17 +171,17 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
         return 0
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var components = Array(routesFilteredArray.keys)
         let sectionString = components[indexPath.section]
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(kRouteDetailCellIdentifier, forIndexPath: indexPath) as! PJRouteDetailTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: kRouteDetailCellIdentifier, for: indexPath) as! PJRouteDetailTableViewCell
         
         cell.delegate = self
         cell.preservesSuperviewLayoutMargins = false
-        cell.separatorInset = UIEdgeInsetsZero
-        cell.layoutMargins = UIEdgeInsetsZero
-        cell.selectionStyle = .None
+        cell.separatorInset = UIEdgeInsets.zero
+        cell.layoutMargins = UIEdgeInsets.zero
+        cell.selectionStyle = .none
         
         cell.route = routesFilteredArray[sectionString]![indexPath.row]
         cell.titleLabel.text = routesFilteredArray[sectionString]![indexPath.row].base
@@ -193,7 +193,7 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     // MARK: UITableViewDelegate
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = HeaderView(tableView: self.tableView, section: section)
         headerView.backgroundColor = UIColor(red: 117.0/255.0,
                                              green: 0/255.0,
@@ -207,15 +207,15 @@ class PJRoutsViewController: UIViewController, UITableViewDelegate, UITableViewD
         label.text = "  Ruta \(sectionString)"
 //        label.textAlignment = NSTextAlignment.Left
         label.font = UIFont(name: "HelveticaNeue", size: 18)
-        label.textColor = UIColor.whiteColor()
+        label.textColor = UIColor.white
         
         headerView.addSubview(label)
         
         return headerView
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     

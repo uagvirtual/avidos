@@ -13,12 +13,12 @@ class PJRouteManager {
     
     var currentRoute:PJRouteObject!
     
-    private init() {
+    fileprivate init() {
         print(#function)
         currentRoute = PJRouteObject()
     }
     
-    func setRoute(route:PJRouteObject){
+    func setRoute(_ route:PJRouteObject){
         // Set Route object
         currentRoute.hour = route.hour
         currentRoute.id = route.id

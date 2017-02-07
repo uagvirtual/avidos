@@ -7,13 +7,26 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
 
 class UIExpandableTableView : UITableView, HeaderViewDelegate {
     
     var sectionOpen:Int = NSNotFound
     
     // MARK: HeaderViewDelegate
-    func headerViewOpen(section: Int) {
+    func headerViewOpen(_ section: Int) {
         
         if self.sectionOpen != NSNotFound {
             headerViewClose(self.sectionOpen)
@@ -21,32 +34,34 @@ class UIExpandableTableView : UITableView, HeaderViewDelegate {
         
         self.sectionOpen = section
         let numberOfRows = self.dataSource?.tableView(self, numberOfRowsInSection: section)
-        var indexesPathToInsert:[NSIndexPath] = []
+        var indexesPathToInsert:[IndexPath] = []
         
-        for var i = 0; i < numberOfRows; i += 1 {
-            indexesPathToInsert.append(NSIndexPath(forRow: i, inSection: section))
+        //for var i = 0; i < numberOfRows; i += 1 {
+        for i in 0..<numberOfRows!{
+            indexesPathToInsert.append(IndexPath(row: i, section: section))
         }
         
         if indexesPathToInsert.count > 0 {
             self.beginUpdates()
-            self.insertRowsAtIndexPaths(indexesPathToInsert, withRowAnimation: UITableViewRowAnimation.Automatic)
+            self.insertRows(at: indexesPathToInsert, with: UITableViewRowAnimation.automatic)
             self.endUpdates()
         }
     }
     
-    func headerViewClose(section: Int) {
+    func headerViewClose(_ section: Int) {
         
         let numberOfRows = self.dataSource?.tableView(self, numberOfRowsInSection: section)
-        var indexesPathToDelete:[NSIndexPath] = []
+        var indexesPathToDelete:[IndexPath] = []
         self.sectionOpen = NSNotFound
         
-        for var i = 0 ; i < numberOfRows; i += 1 {
-            indexesPathToDelete.append(NSIndexPath(forRow: i, inSection: section))
+        //for var i = 0 ; i < numberOfRows; i += 1 {
+        for i in 0..<numberOfRows!{
+            indexesPathToDelete.append(IndexPath(row: i, section: section))
         }
         
         if indexesPathToDelete.count > 0 {
             self.beginUpdates()
-            self.deleteRowsAtIndexPaths(indexesPathToDelete, withRowAnimation: UITableViewRowAnimation.Top)
+            self.deleteRows(at: indexesPathToDelete, with: UITableViewRowAnimation.top)
             self.endUpdates()
         }
     }

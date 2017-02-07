@@ -4,8 +4,8 @@
  use_frameworks!
 
 target 'PuntoJalisco' do
-  pod 'GoogleMaps'
-  pod 'Alamofire', '~> 3.5'
+  pod 'GoogleMaps', ‘2.1.0’
+  pod 'Alamofire'
   pod 'IQKeyboardManagerSwift'
   pod "ExpandableTableViewController"
 end

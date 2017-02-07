@@ -29,13 +29,13 @@ class PJRouteDetailTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
-    @IBAction func goToMapPressed(sender: AnyObject) {
+    @IBAction func goToMapPressed(_ sender: AnyObject) {
         print("go to map pressed")
         PJRouteManager.sharedInstance.setRoute(route)
         delegate?.goToViewMap()

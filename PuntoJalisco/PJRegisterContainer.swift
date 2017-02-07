@@ -14,10 +14,10 @@ class PJRegisterContainer: UIViewController {
     
     lazy var registerViewController: PJRegisterView = {
         // Load Storyboard
-        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
         // Instantiate View Controller
-        var viewController = storyboard.instantiateViewControllerWithIdentifier("PJRegisterView") as! PJRegisterView
+        var viewController = storyboard.instantiateViewController(withIdentifier: "PJRegisterView") as! PJRegisterView
         
         // Add View Controller as Child View Controller
         self.addViewControllerAsChildViewController(viewController)
@@ -29,7 +29,7 @@ class PJRegisterContainer: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        registerViewController.view.hidden = false
+        registerViewController.view.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +38,7 @@ class PJRegisterContainer: UIViewController {
     }
     
 
-    private func addViewControllerAsChildViewController(viewController: UIViewController) {
+    fileprivate func addViewControllerAsChildViewController(_ viewController: UIViewController) {
         // Add Child View Controller
         addChildViewController(viewController)
         
@@ -50,12 +50,12 @@ class PJRegisterContainer: UIViewController {
         //viewController.view.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         
         // Notify Child View Controller
-        viewController.didMoveToParentViewController(self)
+        viewController.didMove(toParentViewController: self)
     }
     
-    private func removeViewControllerAsChildViewController(viewController: UIViewController) {
+    fileprivate func removeViewControllerAsChildViewController(_ viewController: UIViewController) {
         // Notify Child View Controller
-        viewController.willMoveToParentViewController(nil)
+        viewController.willMove(toParentViewController: nil)
         
         // Remove Child View From Superview
         viewController.view.removeFromSuperview()

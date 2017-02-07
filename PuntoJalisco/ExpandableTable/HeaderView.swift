@@ -9,8 +9,8 @@
 import UIKit
 
 protocol HeaderViewDelegate: NSObjectProtocol {
-    func headerViewOpen(section:Int)
-    func headerViewClose(section:Int)
+    func headerViewOpen(_ section:Int)
+    func headerViewClose(_ section:Int)
 }
 
 class HeaderView: UIView {
@@ -22,7 +22,7 @@ class HeaderView: UIView {
     required init(tableView:UIExpandableTableView, section:Int){
         
         let height = tableView.delegate?.tableView!(tableView, heightForHeaderInSection: section)
-        let frame = CGRectMake(0, 0, CGRectGetWidth(tableView.frame), height!)
+        let frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: height!)
         
         super.init(frame: frame)
         
@@ -37,18 +37,18 @@ class HeaderView: UIView {
     
     override func layoutSubviews() {
         let toggleButton = UIButton()
-        toggleButton.addTarget(self, action: #selector(HeaderView.toggle(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        toggleButton.backgroundColor = UIColor.clearColor()
-        toggleButton.frame = CGRectMake(0, 0, self.frame.width, self.frame.height)
+        toggleButton.addTarget(self, action: #selector(HeaderView.toggle(_:)), for: UIControlEvents.touchUpInside)
+        toggleButton.backgroundColor = UIColor.clear
+        toggleButton.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         self.addSubview(toggleButton)
         
         let separator = UIView()
-        separator.frame = CGRectMake(0, self.frame.size.height - 1, self.frame.size.width, 1)
-        separator.backgroundColor = UIColor.whiteColor()
+        separator.frame = CGRect(x: 0, y: self.frame.size.height - 1, width: self.frame.size.width, height: 1)
+        separator.backgroundColor = UIColor.white
         self.addSubview(separator)
     }
     
-    func toggle(sender:AnyObject){
+    func toggle(_ sender:AnyObject){
         
         if self.tableView!.sectionOpen != section! {
             self.delegate?.headerViewOpen(section!)

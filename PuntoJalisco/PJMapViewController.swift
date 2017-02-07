@@ -24,12 +24,12 @@ class PJMapViewController: UIViewController, GMSMapViewDelegate {
     @IBOutlet weak var routeNameLabel: UILabel!
     @IBOutlet weak var mapView: GMSMapView!
     let locationManager = CLLocationManager()
-    var timer:NSTimer = NSTimer()
+    var timer:Timer = Timer()
     var devMode = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        devMode = NSUserDefaults.standardUserDefaults().boolForKey(Constants.isDevMode)
+        devMode = UserDefaults.standard.bool(forKey: Constants.isDevMode)
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -40,23 +40,23 @@ class PJMapViewController: UIViewController, GMSMapViewDelegate {
         selectRouteView.addGestureRecognizer(tap)
     }
     
-    func selectRoute(sender: UITapGestureRecognizer? = nil) {
+    func selectRoute(_ sender: UITapGestureRecognizer? = nil) {
         tabBarController?.selectedIndex = 1
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         if let name = PJRouteManager.sharedInstance.currentRoute.routeName {
             params[Constants.Location.routeKey] = name
             routeNameLabel.text = "Ruta " + name
             self.mapView.clear()
             getLocation()
-            timer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: #selector(getLocation), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(getLocation), userInfo: nil, repeats: true)
         }
         
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
         timer.invalidate()
     }
@@ -75,7 +75,8 @@ class PJMapViewController: UIViewController, GMSMapViewDelegate {
             print("params: \(params)")
             self.mapView.clear()
             print("[ROUTES] - getLocation started")
-            Alamofire.request(.GET, locationPath, parameters:params)
+            
+            Alamofire.request(locationPath, parameters:params)
                 .validate()
                 .responseString { response in
                     print("Success: \(response.result.isSuccess)")
@@ -108,10 +109,10 @@ class PJMapViewController: UIViewController, GMSMapViewDelegate {
     func updateMapWithMarkers(){
         path.removeAllCoordinates()
         for marker in markersArray{
-            path.addCoordinate(marker.position)
+            path.add(marker.position)
         }
         let bounds:GMSCoordinateBounds = GMSCoordinateBounds.init(path: path)
-        let update:GMSCameraUpdate = GMSCameraUpdate.fitBounds(bounds, withPadding: 40.0)
+        let update:GMSCameraUpdate = GMSCameraUpdate.fit(bounds, withPadding: 40.0)
         mapView.moveCamera(update)
     }
 
@@ -129,22 +130,22 @@ class PJMapViewController: UIViewController, GMSMapViewDelegate {
 
 // MARK: - CLLocationManagerDelegate
 extension PJMapViewController: CLLocationManagerDelegate {
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == .AuthorizedWhenInUse {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
             
             locationManager.startUpdatingLocation()
             
-            mapView.myLocationEnabled = true
+            mapView.isMyLocationEnabled = true
             mapView.settings.myLocationButton = true
         }
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("did upadte locations")
         
         if let location = locations.first {
             mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
-            path.addCoordinate(location.coordinate)
+            path.add(location.coordinate)
             locationManager.stopUpdatingLocation()
             
             params[Constants.Location.latKey] = String(location.coordinate.latitude)

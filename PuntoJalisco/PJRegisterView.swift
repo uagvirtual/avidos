@@ -8,13 +8,37 @@
 
 import UIKit
 import Alamofire
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class PJRegisterView: UIViewController {
 
     enum Gender {
-        case Male
-        case Female
-        case None
+        case male
+        case female
+        case none
     }
     var genderType:Gender!
     
@@ -29,22 +53,22 @@ class PJRegisterView: UIViewController {
     @IBOutlet weak var activitiIndicator: UIActivityIndicatorView!
     @IBOutlet weak var updateAlertContainer: UIView!
     
-    let defaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+    let defaults:UserDefaults = UserDefaults.standard
     var params:[String:String] = [:]
     let registerPath = Constants.Paths.mainPath + Constants.Paths.registerPath
     
     var rawResponse = ""
     var parsedResponse = ""
     var token = ""
-    var timer = NSTimer()
+    var timer = Timer()
     var devMode = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        devMode = defaults.boolForKey(Constants.isDevMode)
+        devMode = defaults.bool(forKey: Constants.isDevMode)
         
-        datePicker.addTarget(self, action: #selector(datePickerChanged), forControlEvents: UIControlEvents.ValueChanged)
+        datePicker.addTarget(self, action: #selector(datePickerChanged), for: UIControlEvents.valueChanged)
         
         loadingIndicatorContainer.layer.cornerRadius = 10
         loadingIndicatorContainer.alpha = 0
@@ -52,11 +76,11 @@ class PJRegisterView: UIViewController {
         updateAlertContainer.layer.cornerRadius = 10
         updateAlertContainer.alpha = 0
         
-        if !defaults.boolForKey(Constants.isRegistred) {
+        if !defaults.bool(forKey: Constants.isRegistred) {
             titleLabel.text = "Registrate aquí"
-            registerButton.setTitle("Registrarme", forState: .Normal)
+            registerButton.setTitle("Registrarme", for: UIControlState())
         }
-        genderType = Gender.None
+        genderType = Gender.none
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,7 +88,7 @@ class PJRegisterView: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func registerButtonPressed(sender: AnyObject) {
+    @IBAction func registerButtonPressed(_ sender: AnyObject) {
         if devMode{
             presentMainScreen()
         }else{
@@ -72,34 +96,34 @@ class PJRegisterView: UIViewController {
         }
     }
     
-    @IBAction func onSwitchValueChange(sender: AnyObject) {
+    @IBAction func onSwitchValueChange(_ sender: AnyObject) {
         print("switch")
         if let flatSwitch = sender as? AIFlatSwitch {
             if flatSwitch == maleSwitch {
-                if maleSwitch.selected {
-                    genderType = .Male
-                    print("male \(flatSwitch.selected)")
-                    if femaleSwitch.selected {
-                        femaleSwitch.setSelected(!maleSwitch.selected, animated: true)
+                if maleSwitch.isSelected {
+                    genderType = .male
+                    print("male \(flatSwitch.isSelected)")
+                    if femaleSwitch.isSelected {
+                        femaleSwitch.setSelected(!maleSwitch.isSelected, animated: true)
                     }
                 }
             }else{
-                if femaleSwitch.selected {
-                    genderType = .Female
-                    print("female \(flatSwitch.selected)")
-                    if maleSwitch.selected {
-                        maleSwitch.setSelected(!femaleSwitch.selected, animated: true)
+                if femaleSwitch.isSelected {
+                    genderType = .female
+                    print("female \(flatSwitch.isSelected)")
+                    if maleSwitch.isSelected {
+                        maleSwitch.setSelected(!femaleSwitch.isSelected, animated: true)
                     }
                 }
             }
         }
     }
     
-    func datePickerChanged(datePicker:UIDatePicker){
-        let dateFormatter = NSDateFormatter()
+    func datePickerChanged(_ datePicker:UIDatePicker){
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         
-        let strDate = dateFormatter.stringFromDate(datePicker.date)
+        let strDate = dateFormatter.string(from: datePicker.date)
         print(strDate)
         params[Constants.Register.birthDateKey] = strDate
     }
@@ -109,17 +133,18 @@ class PJRegisterView: UIViewController {
     }
     
     func networkCall(){
-        Alamofire.request(.GET, registerPath, parameters:params)
+        Alamofire.request(registerPath, parameters:params)
             .validate()
             .responseString { response in
                 print("Success: \(response.result.isSuccess)")
-                print("URL: \(response.request?.URLString)")
+                print("URL: \(response.request?.url?.absoluteString)")
                 if response.result.isSuccess{
                     self.rawResponse = response.result.value!
-                    let range = self.rawResponse.startIndex.advancedBy(0)..<self.rawResponse.startIndex.advancedBy(44)
-                    self.parsedResponse = self.rawResponse.substringWithRange(range)
+                    //let range = self.rawResponse.startIndex.advancedBy(0)..<self.rawResponse.startIndex.advancedBy(44)
+                    let range = self.rawResponse.index(self.rawResponse.startIndex, offsetBy: 44)..<self.rawResponse.endIndex
+                    self.parsedResponse = self.rawResponse.substring(with: range)
                     if self.parseToken(self.parsedResponse){
-                        if !self.defaults.boolForKey(Constants.isRegistred){
+                        if !self.defaults.bool(forKey: Constants.isRegistred){
                             self.presentMainScreen()
                         }else{
                             self.hideActivityIndicator(true)
@@ -127,9 +152,9 @@ class PJRegisterView: UIViewController {
                     }
                 }else{
                     self.hideActivityIndicator(false)
-                    let alertController = UIAlertController(title: "Atención", message:"Ha ocurrido un error de conexión, por favor intentalo mas tarde.", preferredStyle: UIAlertControllerStyle.Alert)
-                    alertController.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default,handler: nil))
-                    self.presentViewController(alertController, animated: true, completion: nil)
+                    let alertController = UIAlertController(title: "Atención", message:"Ha ocurrido un error de conexión, por favor intentalo mas tarde.", preferredStyle: UIAlertControllerStyle.alert)
+                    alertController.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.default,handler: nil))
+                    self.present(alertController, animated: true, completion: nil)
                 }
         }
     }
@@ -137,24 +162,24 @@ class PJRegisterView: UIViewController {
     func presentMainScreen(){
         self.hideActivityIndicator(false)
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = mainStoryboard.instantiateViewControllerWithIdentifier("mainTabBarController") as! UITabBarController
-        UIView.transitionFromView((UIApplication.sharedApplication().keyWindow?.rootViewController?.view)!,
-                                  toView: viewController.view,
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "mainTabBarController") as! UITabBarController
+        UIView.transition(from: (UIApplication.shared.keyWindow?.rootViewController?.view)!,
+                                  to: viewController.view,
                                   duration: 0.5,
-                                  options: UIViewAnimationOptions.TransitionFlipFromLeft,
+                                  options: UIViewAnimationOptions.transitionFlipFromLeft,
                                   completion: { (finished) in
-                                    UIApplication.sharedApplication().keyWindow?.rootViewController = viewController;
+                                    UIApplication.shared.keyWindow?.rootViewController = viewController;
         })
-        self.defaults.setBool(true, forKey: Constants.isRegistred)
+        self.defaults.set(true, forKey: Constants.isRegistred)
         self.defaults.synchronize()
     }
     
-    func parseToken(response:String) -> Bool{
+    func parseToken(_ response:String) -> Bool{
         if response.characters.count > 0 {
-            let range = response.startIndex.advancedBy(6)..<response.endIndex.advancedBy(-2)
-            token = response.substringWithRange(range)
+            let range = response.characters.index(response.startIndex, offsetBy: 6)..<response.characters.index(response.endIndex, offsetBy: -2)
+            token = response.substring(with: range)
             if token.characters.count > 0 {
-                self.defaults.setObject(token, forKey: Constants.tokenKey)
+                self.defaults.set(token, forKey: Constants.tokenKey)
                 self.defaults.synchronize()
                 print(token)
                 return true
@@ -179,8 +204,8 @@ class PJRegisterView: UIViewController {
             }
         }
         
-        if genderType != Gender.None{
-            let genderSelected = genderType == .Male ? "H" : "M"
+        if genderType != Gender.none{
+            let genderSelected = genderType == .male ? "H" : "M"
             params[Constants.Register.genderKey] = genderSelected
         }
         
@@ -188,9 +213,9 @@ class PJRegisterView: UIViewController {
             showActivityIndicator()
             networkCall()
         }else{
-            let alertController = UIAlertController(title: "Alerta", message:"Los campos no deben estar vacios, por favor verificalos", preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default,handler: nil))
-            self.presentViewController(alertController, animated: true, completion: nil)
+            let alertController = UIAlertController(title: "Alerta", message:"Los campos no deben estar vacios, por favor verificalos", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.default,handler: nil))
+            self.present(alertController, animated: true, completion: nil)
         }
         
         print(params)
@@ -198,33 +223,33 @@ class PJRegisterView: UIViewController {
     
     func showActivityIndicator(){
         activitiIndicator.startAnimating()
-        UIView.animateWithDuration(0.3, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.loadingIndicatorContainer.alpha = 1
             }, completion: nil)
     }
     
-    func hideActivityIndicator(showAlert:Bool){
+    func hideActivityIndicator(_ showAlert:Bool){
         activitiIndicator.stopAnimating()
-        UIView.animateWithDuration(0.3, animations: { 
+        UIView.animate(withDuration: 0.3, animations: { 
             self.loadingIndicatorContainer.alpha = 0
-            }) { (completed) in
+            }, completion: { (completed) in
                 if showAlert{
                     self.showUpdatedAlert()
                 }
-        }
+        }) 
     }
     
     func showUpdatedAlert(){
-        UIView.animateWithDuration(0.3) { 
+        UIView.animate(withDuration: 0.3, animations: { 
             self.updateAlertContainer.alpha = 1
-        }
-        timer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: #selector(hideUpdateAler), userInfo: nil, repeats: false)
+        }) 
+        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(hideUpdateAler), userInfo: nil, repeats: false)
     }
     
     func hideUpdateAler(){
-        UIView.animateWithDuration(0.3) { 
+        UIView.animate(withDuration: 0.3, animations: { 
             self.updateAlertContainer.alpha = 0
-        }
+        }) 
         timer.invalidate()
     }
 }
